@@ -52,11 +52,11 @@ Early Bird participants receive **BDT 100 off** the applicable regular fee, subj
 - Announcements placeholder for future official updates
 - Promo video placeholder
 - Facilities, pacers, sponsor and partner placeholders
-- Interactive Mapbox race route module with demo GeoJSON data
-- Route toggle for 21.1K, 10K and Kids 1K demo courses
-- Animated route draw, auto-fit bounds, KM markers, water and medical point popups
+- Public interactive race-route map with a no-token Leaflet basemap and embedded demo route data
+- Dedicated `map.html` explorer with route toggles for 42K reference, 10K and Kids 1K previews
+- Auto-fit route view, visible waypoint stars, permanent waypoint labels, zoom controls and click-to-open details
 - Reduced-motion fallback and mobile-responsive map layout
-- Official measured route can replace `data/route-demo.geojson` later without redesigning the map UI
+- The verified 2025 reference route is embedded in `js/leaflet-map.js` and can later be replaced with the official measured course
 - Rules, contact details and official Facebook links
 - Original AIBA and AIBA Hiking & Trekking Club logos
 
@@ -66,8 +66,8 @@ This is a lightweight static website built with:
 
 - Semantic HTML5
 - CSS3 custom properties, responsive grid and theme tokens
-- Vanilla JavaScript for countdowns, theme switching, reveal effects and Mapbox route controls
-- Mapbox GL JS for the public interactive route preview
+- Vanilla JavaScript for countdowns, theme switching, reveal effects and Leaflet route controls
+- Leaflet with public Esri basemap tiles for the public interactive route preview
 - Inline SVG icons
 - Google Fonts: Oswald and Inter
 - GitHub Pages deployment
@@ -91,7 +91,7 @@ No build tool, framework or database is required.
 
 3. Visit `http://localhost:8000`.
 
-The interactive route preview loads from `data/route-demo.geojson`. It is explicitly a demo course and must be replaced with the official measured route before publication.
+The interactive route preview is explicitly a demo/reference course. It renders without a Mapbox token and must be replaced with the official measured route before publication.
 
 ## Deployment
 
