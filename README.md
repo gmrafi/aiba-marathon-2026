@@ -52,7 +52,11 @@ Early Bird participants receive **BDT 100 off** the applicable regular fee, subj
 - Announcements placeholder for future official updates
 - Promo video placeholder
 - Facilities, pacers, sponsor and partner placeholders
-- Race route placeholder for future map integration
+- Interactive Mapbox race route module with demo GeoJSON data
+- Route toggle for 21.1K, 10K and Kids 1K demo courses
+- Animated route draw, auto-fit bounds, KM markers, water and medical point popups
+- Reduced-motion fallback and mobile-responsive map layout
+- Official measured route can replace `data/route-demo.geojson` later without redesigning the map UI
 - Rules, contact details and official Facebook links
 - Original AIBA and AIBA Hiking & Trekking Club logos
 
@@ -62,7 +66,8 @@ This is a lightweight static website built with:
 
 - Semantic HTML5
 - CSS3 custom properties, responsive grid and theme tokens
-- Vanilla JavaScript for countdowns, theme switching and reveal effects
+- Vanilla JavaScript for countdowns, theme switching, reveal effects and Mapbox route controls
+- Mapbox GL JS for the public interactive route preview
 - Inline SVG icons
 - Google Fonts: Oswald and Inter
 - GitHub Pages deployment
@@ -85,6 +90,8 @@ No build tool, framework or database is required.
    ```
 
 3. Visit `http://localhost:8000`.
+
+The interactive route preview loads from `data/route-demo.geojson`. It is explicitly a demo course and must be replaced with the official measured route before publication.
 
 ## Deployment
 

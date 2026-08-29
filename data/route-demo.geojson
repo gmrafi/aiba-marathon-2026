@@ -1,0 +1,42 @@
+{
+  "type": "FeatureCollection",
+  "name": "AIBA Sylhet National Half Marathon 2026 Demo Route",
+  "metadata": {
+    "status": "DEMO ONLY",
+    "todo": "TODO: replace with AIMS-measured route before publishing final race information",
+    "coordinate_order": "[longitude, latitude]"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"route":"half","name":"Demo Half Marathon Route"},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [91.8660,24.9250],[91.8710,24.9265],[91.8765,24.9235],[91.8805,24.9180],
+          [91.8830,24.9110],[91.8790,24.9040],[91.8710,24.9015],[91.8630,24.9045],
+          [91.8570,24.9115],[91.8550,24.9200],[91.8585,24.9280],[91.8660,24.9250]
+        ]
+      }
+    },
+    {
+      "type":"Feature","properties":{"kind":"start","name":"Start Line","detail":"AIBA Sylhet campus"},"geometry":{"type":"Point","coordinates":[91.8660,24.9250]}
+    },
+    {
+      "type":"Feature","properties":{"kind":"finish","name":"Finish Line","detail":"AIBA Sylhet campus"},"geometry":{"type":"Point","coordinates":[91.8660,24.9250]}
+    },
+    {
+      "type":"Feature","properties":{"kind":"water","name":"Water Station 01","detail":"Demo location"},"geometry":{"type":"Point","coordinates":[91.8765,24.9235]}
+    },
+    {
+      "type":"Feature","properties":{"kind":"water","name":"Water Station 02","detail":"Demo location"},"geometry":{"type":"Point","coordinates":[91.8630,24.9045]}
+    },
+    {
+      "type":"Feature","properties":{"kind":"medical","name":"Medical Point","detail":"Demo location"},"geometry":{"type":"Point","coordinates":[91.8550,24.9200]}
+    },
+    {"type":"Feature","properties":{"kind":"km","km":"5K","name":"5 KM"},"geometry":{"type":"Point","coordinates":[91.8805,24.9180]}},
+    {"type":"Feature","properties":{"kind":"km","km":"10K","name":"10 KM"},"geometry":{"type":"Point","coordinates":[91.8790,24.9040]}},
+    {"type":"Feature","properties":{"kind":"km","km":"15K","name":"15 KM"},"geometry":{"type":"Point","coordinates":[91.8570,24.9115]}},
+    {"type":"Feature","properties":{"kind":"km","km":"20K","name":"20 KM"},"geometry":{"type":"Point","coordinates":[91.8585,24.9280]}}
+  ]
+}
