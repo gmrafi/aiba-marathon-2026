@@ -350,6 +350,25 @@ body.dark .map-readout>div{background:rgba(10,40,29,.65);}
 @media(max-width:700px){.map-shell,.race-map{min-height:430px;}.map-readout{grid-template-columns:repeat(2,1fr);}.map-toolbar{align-items:stretch;}.map-fly-btn{justify-content:center;}.map-route-btn{font-size:11px;padding:10px 11px;}}
 @media(max-width:430px){.map-readout{grid-template-columns:1fr 1fr;}.map-readout strong{font-size:14px;}.map-legend{gap:10px;}}
 
+
+/* Compact homepage map preview + nav Map button */
+.nav-links a.nav-map{border:1.5px solid rgba(200,241,53,.55);color:#d4ff00;border-radius:6px;padding:6px 13px;background:rgba(200,241,53,.08);}
+.nav-links a.nav-map:hover{background:rgba(200,241,53,.18);}
+body:not(.dark) .nav-links a.nav-map{border-color:rgba(77,124,15,.55);color:#3f6212;background:rgba(77,124,15,.08);}
+body:not(.dark) .nav-links a.nav-map:hover{background:rgba(77,124,15,.16);}
+.map-preview-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:stretch;}
+.map-shell.preview{min-height:360px;}
+.map-shell.preview .race-map{min-height:360px;}
+.map-preview-side{display:flex;flex-direction:column;gap:14px;background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:20px;}
+.map-preview-side .map-route-buttons{display:flex;gap:8px;flex-wrap:wrap;}
+.map-preview-side .map-route-btn{flex:1;min-width:70px;text-align:center;justify-content:center;padding:11px 10px;}
+.mini-readout{display:flex;flex-direction:column;gap:10px;}
+.mini-readout>div{padding:12px 14px;background:var(--bg);border:1px solid var(--card-border);border-radius:10px;}
+body.dark .mini-readout>div{background:rgba(255,255,255,.04);}
+.map-full-cta{justify-content:center;text-align:center;}
+.preview-note{font-size:12px;color:var(--muted);line-height:1.6;}
+@media(max-width:900px){.map-preview-grid{grid-template-columns:1fr;}.map-shell.preview,.map-shell.preview .race-map{min-height:320px;}}
+
 </head>
 <body>
 
@@ -390,6 +409,7 @@ body.dark .map-readout>div{background:rgba(10,40,29,.65);}
         <li><a href="#facilities">Facilities</a></li>
         <li><a href="#prizes">Prizes</a></li>
         <li><a href="#route">Route</a></li>
+        <li><a class="nav-map" href="map.html">Map</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode" title="Toggle theme" onclick="toggleAibaTheme()">
@@ -716,30 +736,29 @@ body.dark .map-readout>div{background:rgba(10,40,29,.65);}
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="kicker"><svg class="ic"><use href="#i-pin"/></svg> Find Your Way</div>
-      <h2>Interactive Race <span class="accent">Route</span></h2>
-      <p>Explore the demo course below. The official measured route will replace this map before final publication.</p>
+      <h2>Race <span class="accent">Route</span></h2>
+      <p>A quick interactive preview of the demo course. Open the full map for every feature.</p>
     </div>
-    <div class="map-toolbar reveal">
-      <div class="map-route-buttons" role="group" aria-label="Choose demo route">
-        <button type="button" class="map-route-btn active" data-route="half">21.1K Half Marathon</button>
-        <button type="button" class="map-route-btn" data-route="10k">10K</button>
-        <button type="button" class="map-route-btn" data-route="kids">Kids 1K</button>
+    <div class="map-preview-grid reveal">
+      <div class="map-shell preview">
+        <div id="raceMap" class="race-map" aria-label="Interactive demo race route preview"></div>
+        <div class="map-overlay-badge"><span>DEMO ROUTE</span><small>Replace before publication</small></div>
+        <div class="map-error-message"><strong>Map preview unavailable</strong><span>The official route will appear here when map data is available.</span></div>
       </div>
-      <button type="button" class="map-fly-btn" id="flyRoute"><svg class="ic"><use href="#i-run"/></svg> Fly the Route</button>
-    </div>
-    <div class="map-shell reveal">
-      <div id="raceMap" class="race-map" aria-label="Interactive demo race route map"></div>
-      <div class="map-overlay-badge"><span>DEMO ROUTE</span><small>Replace before publication</small></div>
-      <div class="map-error-message"><strong>Map preview unavailable</strong><span>The official route will appear here when map data is available.</span></div>
-    </div>
-    <div class="map-readout reveal">
-      <div><span class="readout-label">Selected course</span><strong id="mapRouteName">General Half Marathon</strong></div>
-      <div><span class="readout-label">Distance</span><strong id="mapDistance">21.1 KM</strong></div>
-      <div><span class="readout-label">Map points</span><strong>Start, Finish, Water, Medical</strong></div>
-      <div><span class="readout-label">Status</span><strong id="mapDemoNote">DEMO ROUTE ONLY</strong></div>
-    </div>
-    <div class="map-legend reveal">
-      <span><i class="legend-dot start"></i> Start</span><span><i class="legend-dot finish"></i> Finish</span><span><i class="legend-dot water"></i> Water</span><span><i class="legend-dot medical"></i> Medical</span><span><i class="legend-dot km"></i> KM marker</span>
+      <div class="map-preview-side">
+        <div class="map-route-buttons" role="group" aria-label="Choose demo route">
+          <button type="button" class="map-route-btn active" data-route="half">21.1K</button>
+          <button type="button" class="map-route-btn" data-route="10k">10K</button>
+          <button type="button" class="map-route-btn" data-route="kids">1K</button>
+        </div>
+        <div class="mini-readout">
+          <div><span class="readout-label">Course</span><strong id="mapRouteName">General Half Marathon</strong></div>
+          <div><span class="readout-label">Distance</span><strong id="mapDistance">21.1 KM</strong></div>
+          <div><span class="readout-label">Status</span><strong id="mapDemoNote">DEMO ROUTE ONLY</strong></div>
+        </div>
+        <a class="btn btn-primary map-full-cta" href="map.html"><svg class="ic"><use href="#i-pin"/></svg> Open Full Interactive Map</a>
+        <p class="preview-note">The dedicated map page includes Fly the Route, full markers, legend and race-day points of interest.</p>
+      </div>
     </div>
   </div>
 </section>
