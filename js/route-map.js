@@ -101,7 +101,7 @@
     map = new mapboxgl.Map({ container: 'raceMap', style: 'mapbox://styles/mapbox/dark-v11', center: [91.866, 24.925], zoom: 12.5, attributionControl: true });
     map.addControl(new mapboxgl.NavigationControl({ showCompass: true }), 'top-right');
     map.on('load', () => {
-      map.addSource('demo-route', { type: 'geojson', data: routeLine });
+      map.addSource('demo-route', { type: 'geojson', data: getRoute('half') });
       map.addLayer({ id: 'demo-route-glow', type: 'line', source: 'demo-route', paint: { 'line-color': colors.lime, 'line-width': 12, 'line-opacity': 0.16, 'line-blur': 5 } });
       map.addLayer({ id: 'demo-route', type: 'line', source: 'demo-route', paint: { 'line-width': 4, 'line-cap': 'round', 'line-join': 'round', 'line-color': colors.lime } });
       map.addSource('demo-pois', { type: 'geojson', data: empty });
