@@ -12,7 +12,7 @@
   function init(el,data){
     if(el._leafletMap)return el._leafletMap;
     var map=L.map(el,{zoomControl:true,scrollWheelZoom:true,preferCanvas:true});
-    var tile=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap contributors'}).addTo(map);
+    var tile=L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{subdomains:'abcd',maxZoom:20,attribution:'© OpenStreetMap © CARTO'}).addTo(map);
     var line=featureByType(data,'LineString');
     if(!line){el.parentElement.classList.add('map-error');return map;}
     var coords=line.geometry.coordinates.map(function(c){return [c[1],c[0]];});
