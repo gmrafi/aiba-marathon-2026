@@ -67,7 +67,7 @@ body.dark .icon-sun{display:none;}
 body.dark .icon-moon{display:block;}
 @media(max-width:760px){.brand-text{font-size:11px;}.brand-text small{font-size:9px;}.logo-badge,.logo-badge img{height:36px;}.nav-link-btn{padding:9px 12px;font-size:11px;}}
 /* ===== MAP LAYOUT ===== */
-.map-page{flex:1;display:grid;grid-template-columns:340px 1fr;min-height:0;}
+.map-page{flex:1;display:grid;grid-template-columns:340px 1fr;min-height:0;height:calc(100vh - 66px);}
 .map-side{
   background:var(--card);border-right:1px solid var(--card-border);
   padding:24px 22px;overflow-y:auto;display:flex;flex-direction:column;gap:20px;
@@ -111,8 +111,8 @@ body.dark .map-fly-btn:hover{color:#062018;background:var(--accent-strong);}
 .side-note{font-size:11.5px;color:var(--muted);line-height:1.6;}
 .side-note a{color:var(--accent-strong);}
 /* ===== MAP CANVAS ===== */
-.map-shell{position:relative;min-height:0;background:#122a24;}
-.race-map{position:absolute;inset:0;}
+.map-shell{position:relative;min-height:0;height:100%;background:#122a24;}
+.race-map{position:absolute;inset:0;width:100%;height:100%;min-height:1px;}
 .map-overlay-badge{position:absolute;left:16px;top:16px;z-index:3;background:rgba(6,32,24,.9);border:1px solid rgba(200,241,53,.6);border-radius:8px;padding:9px 12px;color:#d4ff00;pointer-events:none;}
 .map-overlay-badge span{display:block;font-family:'Oswald';font-weight:700;font-size:13px;letter-spacing:.12em;}
 .map-overlay-badge small{display:block;color:#b1d0bd;font-size:10px;margin-top:3px;}
@@ -132,7 +132,7 @@ body.dark .map-fly-btn:hover{color:#062018;background:var(--accent-strong);}
 .map-popup small{display:block;color:#a9c7b5;font:11px 'Inter';margin-top:2px;}
 @media(max-width:900px){
   body{overflow:auto;}
-  .map-page{grid-template-columns:1fr;grid-template-rows:auto 70vh;}
+  .map-page{grid-template-columns:1fr;grid-template-rows:auto 70vh;height:auto;min-height:calc(100vh - 66px);}
   .map-side{border-right:none;border-bottom:1px solid var(--card-border);}
   .map-route-buttons{flex-direction:row;flex-wrap:wrap;}
   .map-route-btn{width:auto;flex:1;min-width:130px;font-size:12px;padding:11px 12px;}
