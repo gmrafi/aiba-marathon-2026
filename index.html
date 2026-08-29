@@ -634,7 +634,7 @@ function buildCountdown(elId, target, doneMsg){
   var labels=['Days','Hours','Minutes','Seconds'];
   function render(){
     var diff=target-new Date();
-    if(diff<=0){el.innerHTML='<div style="font-family:'Oswald';color:var(--accent-strong);font-size:26px;">'+doneMsg+'</div>';return;}
+    if(diff<=0){el.innerHTML='<div style="font-family:Oswald,sans-serif;color:var(--accent-strong);font-size:26px;">'+doneMsg+'</div>';return;}
     var d=Math.floor(diff/864e5),h=Math.floor(diff/36e5)%24,m=Math.floor(diff/6e4)%60,s=Math.floor(diff/1e3)%60;
     var vals=[d,h,m,s];
     el.innerHTML=vals.map(function(v,i){
@@ -650,6 +650,13 @@ var io=new IntersectionObserver(function(entries){
   entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}});
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+// Failsafe: if anything above fails, never leave content hidden
+setTimeout(function(){
+  document.querySelectorAll('.reveal:not(.on)').forEach(function(el){
+    var r=el.getBoundingClientRect();
+    if(r.top < window.innerHeight*3){ el.classList.add('on'); }
+  });
+}, 2500);
 </script>
 </body>
 </html>
