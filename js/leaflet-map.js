@@ -5,8 +5,8 @@
   function popup(p){return '<strong>'+ (p.name||'Route point') +'</strong><br><small>'+ (p.detail||'2025 reference route') +'</small>';}
   function makeMarker(map,f){
     var p=f.properties||{}, c=f.geometry.coordinates;
-    var icon=L.divIcon({className:'leaflet-star-marker',html:'★',iconSize:[38,38],iconAnchor:[19,19]});
-    L.marker([c[1],c[0]],{icon:icon,zIndexOffset:1000}).addTo(map).bindPopup(popup(p));
+    var icon=L.divIcon({className:'leaflet-star-marker',html:'<span>★</span>',iconSize:[42,42],iconAnchor:[21,21]});
+    L.marker([c[1],c[0]],{icon:icon,zIndexOffset:1000}).addTo(map).bindPopup(popup(p)).bindTooltip((p.name||'Waypoint').replace('Army Institute of Business Administration (Army IBA), Sylhet','Army IBA').replace('Academy Square Sreerampur Sylhet','Academy Square Sreerampur'),{permanent:true,direction:'right',offset:[16,0],className:'waypoint-label'});
   }
   function featureByType(data,type){return (data.features||[]).find(function(f){return f.geometry&&f.geometry.type===type;});}
   function init(el,data){
@@ -19,7 +19,7 @@
     var shadow=L.polyline(coords,{color:colors.outline,weight:12,opacity:.8,lineCap:'round',lineJoin:'round'}).addTo(map);
     var route=L.polyline(coords,{color:colors.route,weight:5,opacity:1,lineCap:'round',lineJoin:'round'}).addTo(map);
     var bounds=route.getBounds();
-    (data.features||[]).filter(function(f){return f.geometry&&f.geometry.type==='Point'&&((f.properties||{}).kind==='waypoint');}).forEach(function(f){makeMarker(map,f);});
+    var waypointFeatures=(data.features||[]).filter(function(f){return f.geometry&&f.geometry.type==='Point'&&((f.properties||{}).kind==='waypoint');}).forEach(function(f){var c=f.geometry.coordinates;bounds.extend([c[1],c[0]]);makeMarker(map,f);});
     map.fitBounds(bounds,{padding:[28,28]});
     setTimeout(function(){map.invalidateSize();},120);
     el.parentElement.classList.add('leaflet-ready');
