@@ -120,8 +120,8 @@ body.dark .map-fly-btn:hover{color:#062018;background:var(--accent-strong);}
 .map-error-message{display:none;position:absolute;inset:0;z-index:2;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:#0b3d2e;color:#fff;text-align:center;padding:30px;}
 .map-error-message strong{font-family:'Oswald';font-size:24px;color:#d4ff00;}
 .map-error-message span{color:#b1d0bd;font-size:13px;}
-.map-shell.map-error .map-error-message{display:flex;}
-.map-shell.map-error .race-map{display:none;}
+.map-shell.map-error .map-error-message{display:none;}
+.map-shell.map-error .race-map{display:block;}
 .map-marker{width:29px;height:29px;border-radius:50%;border:2px solid #fff;background:#0b3d2e;color:#fff;font:700 11px 'Oswald';display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.45);cursor:pointer;}
 .marker-waypoint{background:#d4ff00;color:#062018;font-size:18px;width:36px;height:36px;}.marker-start{background:#d4ff00;color:#062018;}.marker-finish{background:#ef6351;}.marker-water{background:#3c9ee8;}.marker-medical{background:#d9465f;}
 .marker-km{background:#f2b84b;color:#062018;width:32px;height:24px;border-radius:6px;}
@@ -219,7 +219,7 @@ body:not(.dark) .route-fallback{opacity:.96;background:linear-gradient(135deg,rg
 </main>
 
 <script src="js/config.js"></script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js'"></script>
 <script>
 (function(){
   var saved=null;
