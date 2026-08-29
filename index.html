@@ -4,7 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AIBA Sylhet National Half Marathon 2026</title>
-<script>document.documentElement.classList.add('js');</script>
+<script>
+  document.documentElement.classList.add('js');
+  window.toggleAibaTheme = function(){
+    document.body.classList.toggle('dark');
+    try{localStorage.setItem('aiba-theme', document.body.classList.contains('dark') ? 'dark' : 'light');}catch(e){}
+  };
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ===== THEME VARIABLES (Light = default) ===== */
@@ -386,7 +392,7 @@ body.dark .map-readout>div{background:rgba(10,40,29,.65);}
         <li><a href="#route">Route</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode" title="Toggle theme" onclick="window.__aibaToggle&&window.__aibaToggle()">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode" title="Toggle theme" onclick="toggleAibaTheme()">
         <svg class="ic icon-sun"><use href="#i-sun"/></svg>
         <svg class="ic icon-moon"><use href="#i-moon"/></svg>
       </button>
@@ -790,7 +796,7 @@ body.dark .map-readout>div{background:rgba(10,40,29,.65);}
 
 <script>
 // ===== Theme toggle (light default, remembered) =====
-window.__aibaToggle=function(){
+window.toggleAibaTheme=window.toggleAibaTheme||function(){
   document.body.classList.toggle('dark');
   try{localStorage.setItem('aiba-theme',document.body.classList.contains('dark')?'dark':'light');}catch(e){}
 };
@@ -799,8 +805,7 @@ window.__aibaToggle=function(){
   try{saved=localStorage.getItem('aiba-theme');}catch(e){}
   var previewTheme=new URLSearchParams(window.location.search).get('theme');
   if(previewTheme==='dark' || (previewTheme!=='light' && saved==='dark')){document.body.classList.add('dark');}
-  var btn=document.getElementById('themeToggle');
-  if(btn){btn.addEventListener('click',window.__aibaToggle);}
+  // The button has one inline handler to prevent a double-toggle.
 })();
 // ===== Emblem =====
 (function(){
