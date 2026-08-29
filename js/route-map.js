@@ -8,7 +8,7 @@
   }
 
   mapboxgl.accessToken = window.AIBA_MAPBOX_TOKEN;
-  const routeURL = 'data/route-demo.geojson';
+  const routeURL = 'data/route-reference-2025.geojson';
   const colors = { lime: '#c8f135', green: '#0b3d2e', teal: '#16805c', red: '#ef6351', blue: '#4d96ff' };
   const routeLine = {
     type: 'Feature', properties: { route: 'half' }, geometry: { type: 'LineString', coordinates: [] }
@@ -35,12 +35,12 @@
     return {
       type: 'FeatureCollection',
       features: routeData.features.filter(f => f.geometry.type === 'Point' &&
-        (f.properties.kind === 'start' || f.properties.kind === 'finish' || f.properties.kind === 'water' || f.properties.kind === 'medical' || f.properties.kind === 'km'))
+        (f.properties.kind === 'waypoint' || f.properties.kind === 'start' || f.properties.kind === 'finish' || f.properties.kind === 'water' || f.properties.kind === 'medical' || f.properties.kind === 'km'))
     };
   }
 
   function popupHTML(props) {
-    const icon = props.kind === 'water' ? 'W' : props.kind === 'medical' ? 'M' : props.kind === 'km' ? props.km : props.kind === 'finish' ? 'F' : 'S';
+    const icon = props.kind === 'waypoint' ? '★' : props.kind === 'water' ? 'W' : props.kind === 'medical' ? 'M' : props.kind === 'km' ? props.km : props.kind === 'finish' ? 'F' : 'S';
     return '<div class="map-popup"><span class="popup-icon">' + icon + '</span><div><strong>' + props.name + '</strong><small>' + (props.detail || 'Distance marker') + '</small></div></div>';
   }
 
@@ -48,7 +48,7 @@
     const title = document.getElementById('mapRouteName');
     const distance = document.getElementById('mapDistance');
     const note = document.getElementById('mapDemoNote');
-    const values = { half: ['General Half Marathon', '21.1 KM'], '10k': ['General and Students 10K', '10 KM'], kids: ['Kids Run', '1 KM'] };
+    const values = { half: ['2025 Reference Route', '42 KM'], '10k': ['10K Preview Segment', '10 KM'], kids: ['Kids 1K Preview', '1 KM'] };
     title.textContent = values[route][0];
     distance.textContent = values[route][1];
     note.textContent = 'DEMO ROUTE ONLY: replace with the official measured course before publishing.';
@@ -91,7 +91,7 @@
   function addMarker(feature) {
     const p = feature.properties;
     const el = document.createElement('button');
-    el.type = 'button'; el.className = 'map-marker marker-' + p.kind; el.textContent = p.kind === 'km' ? p.km : p.kind === 'water' ? 'W' : p.kind === 'medical' ? 'M' : p.kind === 'finish' ? 'F' : 'S';
+    el.type = 'button'; el.className = 'map-marker marker-' + p.kind; el.textContent = p.kind === 'waypoint' ? '★' : p.kind === 'km' ? p.km : p.kind === 'water' ? 'W' : p.kind === 'medical' ? 'M' : p.kind === 'finish' ? 'F' : 'S';
     el.setAttribute('aria-label', p.name);
     new mapboxgl.Marker({ element: el, anchor: 'center' }).setLngLat(feature.geometry.coordinates).setPopup(new mapboxgl.Popup({ offset: 18 }).setHTML(popupHTML(p))).addTo(map);
   }
