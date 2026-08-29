@@ -84,6 +84,7 @@ nav{
   position:sticky;top:0;z-index:100;
   background:var(--nav-bg);backdrop-filter:blur(12px);
   border-bottom:1px solid var(--nav-border);
+  border-radius:0 0 22px 22px;
   transition:background .35s ease;
 }
 .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:10px 20px;gap:14px;}
@@ -114,9 +115,31 @@ body.dark .icon-sun{display:none;}
 body.dark .icon-moon{display:block;}
 @media(max-width:860px){.nav-links{display:none;}.brand-text{font-size:12px;}.brand-text small{font-size:9px;}}
 /* ===== HERO ===== */
-.hero{min-height:92vh;display:flex;align-items:center;text-align:center;padding:60px 0;}
+.hero{min-height:92vh;display:flex;align-items:center;padding:60px 0;}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;}
+.hero-left{text-align:left;}
+.hero-panel{
+  background:var(--card);border:1px solid var(--card-border);border-radius:18px;
+  padding:26px;box-shadow:0 16px 40px rgba(0,0,0,.10);
+}
+body.dark .hero-panel{box-shadow:0 16px 40px rgba(0,0,0,.45);}
+.hp-title{font-family:'Oswald';text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:var(--muted);text-align:center;}
+.hero-panel .countdown{margin-top:14px;gap:10px;}
+.hero-panel .cd-box{min-width:70px;padding:12px 6px;}
+.hero-panel .cd-num{font-size:clamp(24px,3vw,36px);}
+.hp-rows{margin-top:20px;display:flex;flex-direction:column;gap:12px;}
+.hp-row{display:flex;gap:12px;align-items:center;padding:10px 12px;border-radius:10px;background:var(--bg);border:1px solid var(--card-border);}
+body.dark .hp-row{background:rgba(255,255,255,.03);}
+.hp-ic{flex:none;width:38px;height:38px;border-radius:10px;background:var(--accent-soft);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;color:var(--accent);}
+.hp-row b{display:block;font-size:14px;color:var(--text-strong);}
+.hp-row small{color:var(--muted);font-size:12px;line-height:1.4;}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:40px;}
+  .hero-left{text-align:center;}
+  .cta-row{justify-content:center !important;}
+}
 .hero .kicker{color:var(--accent);letter-spacing:.35em;text-transform:uppercase;font-size:13px;font-weight:600;}
-.hero h1{font-size:clamp(42px,8vw,96px);line-height:1.02;font-weight:700;margin:18px 0 8px;text-transform:uppercase;color:var(--text-strong);}
+.hero h1{font-size:clamp(38px,5.2vw,74px);line-height:1.04;font-weight:700;margin:18px 0 8px;text-transform:uppercase;color:var(--text-strong);}
 .hero h1 .lime{color:var(--accent-strong);text-shadow:0 0 30px var(--accent-soft);}
 .hero .tagline{color:var(--muted);font-size:clamp(15px,2.2vw,20px);letter-spacing:.12em;}
 .hero .meta{margin-top:26px;font-family:'Oswald';font-size:clamp(16px,2.4vw,22px);letter-spacing:.06em;}
@@ -296,17 +319,40 @@ footer .sec-head h2{color:#f4f9f4;}
 <!-- HERO -->
 <header class="hero">
   <div class="wrap">
-    <div class="emblem" id="emblem"></div>
-    <div class="kicker reveal">Army IBA Hiking And Trekking Club, Sylhet presents</div>
-    <h1 class="italic-race reveal">AIBA SYLHET<br><span class="lime">NATIONAL HALF MARATHON</span><br>2026</h1>
-    <div class="tagline reveal">Run From Sylhet, Run For The Nation</div>
-    <div class="meta reveal"><span class="date"><svg class="ic"><use href="#i-calendar"/></svg> 13 NOVEMBER 2026</span></div>
-    <div class="venue reveal"><svg class="ic" style="color:var(--accent)"><use href="#i-pin"/></svg> Army Institute of Business Administration (AIBA), Sylhet Cantonment Road, Sylhet, Bangladesh</div>
-    <div class="cta-row reveal">
-      <a class="btn btn-primary" href="https://runbangladesh.com/" target="_blank" rel="noopener" data-reg-link><svg class="ic"><use href="#i-ticket"/></svg> Register via Run Bangladesh</a>
-      <a class="btn btn-ghost" href="#prizes"><svg class="ic"><use href="#i-trophy"/></svg> Prize Pool — BDT 300K</a>
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="emblem" id="emblem"></div>
+        <div class="kicker reveal">Army IBA Hiking And Trekking Club, Sylhet presents</div>
+        <h1 class="italic-race reveal">AIBA SYLHET<br><span class="lime">NATIONAL HALF MARATHON</span><br>2026</h1>
+        <div class="tagline reveal">Run From Sylhet, Run For The Nation</div>
+        <div class="cta-row reveal" style="justify-content:inherit;">
+          <a class="btn btn-primary" href="https://runbangladesh.com/" target="_blank" rel="noopener" data-reg-link><svg class="ic"><use href="#i-ticket"/></svg> Register via Run Bangladesh</a>
+          <a class="btn btn-ghost" href="#prizes"><svg class="ic"><use href="#i-trophy"/></svg> Prize Pool — BDT 300K</a>
+        </div>
+      </div>
+      <div class="hero-panel reveal">
+        <div class="hp-title">Race Day Countdown</div>
+        <div class="countdown" id="raceCountdown"></div>
+        <div class="hp-rows">
+          <div class="hp-row">
+            <span class="hp-ic"><svg class="ic"><use href="#i-calendar"/></svg></span>
+            <div><b>13 November 2026</b><small>Race Day — Friday</small></div>
+          </div>
+          <div class="hp-row">
+            <span class="hp-ic"><svg class="ic"><use href="#i-pin"/></svg></span>
+            <div><b>AIBA, Sylhet</b><small>Sylhet Cantonment Road, Sylhet, Bangladesh</small></div>
+          </div>
+          <div class="hp-row">
+            <span class="hp-ic"><svg class="ic"><use href="#i-clock"/></svg></span>
+            <div><b>Early Bird — 01 September 2026</b><small>BDT 100 off on every category</small></div>
+          </div>
+          <div class="hp-row">
+            <span class="hp-ic"><svg class="ic"><use href="#i-trophy"/></svg></span>
+            <div><b>Total Prize Pool — BDT 300K</b><small>All awards strictly gender-neutral</small></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="countdown" id="raceCountdown"></div>
   </div>
 </header>
 
