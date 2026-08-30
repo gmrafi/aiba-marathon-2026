@@ -217,8 +217,8 @@
   function presetRoute(){
     var r=new URLSearchParams(window.location.search).get('route');
     if(!r)return;r=r.toLowerCase();
-    var btn=document.querySelector('[data-route="'+r+'"]'];
-    if(btn)setTimeout(function(){btn.click();},50);
+    var btns=document.querySelectorAll('[data-route]');
+    for(var i=0;i<btns.length;i++){var b=btns[i];if(b.getAttribute('data-route')===r){(function(n){setTimeout(function(){n.click();},80);})(b);return;}}
   }
   function start(data){document.querySelectorAll('.race-map').forEach(function(el){init(el,data);});refreshButtons();presetRoute();window.updateLayerLabel=function(name){document.querySelectorAll('[data-layer-name]').forEach(function(e){e.textContent=name;});};}
   function fail(){document.querySelectorAll('.map-shell').forEach(function(el){el.classList.add('map-error');});}
