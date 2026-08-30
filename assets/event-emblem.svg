@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="AIBA Sylhet NHM 2026 event emblem">
+  <defs>
+    <g id="emb-arm">
+      <!-- one arm: outer chevron arrow + inner zig-zag chevron, pointing up -->
+      <path d="M0,-150 L34,-86 L18,-86 L34,-100 L0,-30 L-34,-100 L-18,-86 L-34,-86 Z" fill="#d4ff00"/>
+      <path d="M0,-60 L24,-30 L0,-12 L-24,-30 Z" fill="#d4ff00"/>
+    </g>
+    <g id="emb-spark">
+      <path d="M0,-10 L4,-2 L-4,-2 Z" fill="#d4ff00"/>
+    </g>
+  </defs>
+  <!-- white background -->
+  <rect width="400" height="400" fill="#ffffff"/>
+  <!-- six arms, rotated 60deg each -->
+  <g transform="translate(200,200)">
+    <g><use href="#emb-arm"/></g>
+    <g transform="rotate(60)"><use href="#emb-arm"/></g>
+    <g transform="rotate(120)"><use href="#emb-arm"/></g>
+    <g transform="rotate(180)"><use href="#emb-arm"/></g>
+    <g transform="rotate(240)"><use href="#emb-arm"/></g>
+    <g transform="rotate(300)"><use href="#emb-arm"/></g>
+    <!-- dashed motion sparks around the arms, between them -->
+    <g opacity="0.95">
+      <g transform="rotate(30)"><use href="#emb-spark" transform="translate(0,-110)"/></g>
+      <g transform="rotate(90)"><use href="#emb-spark" transform="translate(0,-130)"/></g>
+      <g transform="rotate(150)"><use href="#emb-spark" transform="translate(0,-110)"/></g>
+      <g transform="rotate(210)"><use href="#emb-spark" transform="translate(0,-130)"/></g>
+      <g transform="rotate(270)"><use href="#emb-spark" transform="translate(0,-110)"/></g>
+      <g transform="rotate(330)"><use href="#emb-spark" transform="translate(0,-130)"/></g>
+    </g>
+  </g>
+</svg>

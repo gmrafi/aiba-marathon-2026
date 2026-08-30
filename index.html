@@ -122,7 +122,7 @@ body:not(.dark) .theme-toggle{
   border-color:rgba(77,124,15,.45);background:#ffffff;color:#3f6212;
 }
 body:not(.dark) .brand-accent{color:#3f6212 !important;}
-body:not(.dark) .emblem span{background:#4d7c0f;}
+
 .theme-toggle:hover{box-shadow:var(--glow);transform:rotate(15deg);}
 .theme-toggle .ic{width:20px;height:20px;}
 .icon-moon{display:none;}
@@ -315,7 +315,8 @@ footer .sec-head h2{color:#f4f9f4;}
 /* reveal: visible by default; only JS-enabled browsers animate it in */
 html.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
 html.js .reveal.on{opacity:1;transform:none;}
-.emblem{display:inline-block;width:54px;height:54px;position:relative;margin-bottom:14px;}
+.hero-emblem{display:inline-block;line-height:0;margin-bottom:14px;}
+.hero-emblem img{width:120px;height:120px;display:block;filter:drop-shadow(0 4px 14px rgba(212,255,0,.25));}
 .emblem span{position:absolute;left:50%;top:50%;width:5px;height:22px;background:var(--accent);transform-origin:50% 130%;border-radius:2px;}
 /* register strip */
 .reg-strip{
@@ -452,7 +453,7 @@ body:not(.dark) .route-fallback{opacity:.94;background:linear-gradient(135deg,rg
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-left">
-        <div class="emblem" id="emblem"></div>
+        <div class="hero-emblem"><img src="/assets/event-emblem.svg" alt="AIBA Sylhet National Half Marathon 2026 emblem" width="120" height="120"/></div>
         <div class="kicker reveal">Army IBA Hiking And Trekking Club, Sylhet presents</div>
         <h1 class="italic-race reveal">AIBA SYLHET<br><span class="lime">NATIONAL HALF MARATHON</span><br>2026</h1>
         <div class="tagline reveal">Run From Sylhet, Run For The Nation</div>
@@ -854,13 +855,7 @@ window.toggleAibaTheme=window.toggleAibaTheme||function(){
 })();
 // ===== Emblem =====
 (function(){
-  var e=document.getElementById('emblem');
-  for(var i=0;i<12;i++){
-    var s=document.createElement('span');
-    s.style.transform='translate(-50%,-100%) rotate('+(i*30)+'deg)';
-    e.appendChild(s);
-  }
-})();
+  // emblem now rendered as static SVG image)();
 // ===== Countdowns =====
 function buildCountdown(elId, target, doneMsg){
   var el=document.getElementById(elId);
