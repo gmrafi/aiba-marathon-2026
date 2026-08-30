@@ -91,8 +91,14 @@ body.dark .demo-badge strong{color:#f2b84b;}
 .map-route-btn{border:1px solid var(--card-border);background:var(--bg);color:var(--muted);}
 .map-route-btn small{font-family:'Inter';font-weight:600;font-size:11px;letter-spacing:.05em;opacity:.85;}
 .map-route-btn:hover{border-color:var(--accent);color:var(--accent-strong);}
-.map-route-btn.active{background:var(--accent);border-color:var(--accent);color:#ffffff;}
+.map-route-btn[data-route-color]{--route-color:attr(data-route-color type(<color>),#d4ff00);}.map-route-btn.active{background:var(--accent);border-color:var(--accent);color:#ffffff;}
 body.dark .map-route-btn.active{color:#062018;background:var(--accent-strong);border-color:var(--accent-strong);}
+.map-route-btn.active[data-route="half"]{background:#d4ff00!important;border-color:#d4ff00!important;color:#062018!important;box-shadow:0 6px 18px rgba(212,255,0,.45);}
+.map-route-btn.active[data-route="10k"]{background:#ff8a1a!important;border-color:#ff8a1a!important;color:#1a0d00!important;box-shadow:0 6px 18px rgba(255,138,26,.45);}
+.map-route-btn.active[data-route="kids"]{background:#e056a8!important;border-color:#e056a8!important;color:#fff!important;box-shadow:0 6px 18px rgba(224,86,168,.45);}
+.map-route-btn strong{display:block;font-size:14px;letter-spacing:.06em;}
+.map-route-btn small{display:block;margin-top:4px;font-weight:500;opacity:.95;}
+.legend-dot.turnaround{background:#ffb84d;box-shadow:0 0 0 2px rgba(255,184,77,.25);}
 .map-fly-btn{
   border:1.5px solid var(--accent);background:var(--accent-soft);color:var(--accent-strong);
   justify-content:center;
@@ -218,9 +224,18 @@ body:not(.dark) .route-fallback{opacity:.96;background:linear-gradient(135deg,rg
       <span>Justice Half Marathon 2025 route reference. Confirm before using for 2026.</span>
     </div>
     <div class="map-route-buttons" role="group" aria-label="Choose demo route">
-      <button type="button" class="map-route-btn active" data-route="half">2025 Reference <small>42 KM</small></button>
-      <button type="button" class="map-route-btn" data-route="10k">General and Students <small>10 KM</small></button>
-      <button type="button" class="map-route-btn" data-route="kids">Kids Run <small>1 KM</small></button>
+      <button type="button" class="map-route-btn active" data-route="half" data-route-color="#d4ff00">
+        <strong>Half Marathon</strong>
+        <small>21.1 KM · Army IBA &harr; Midpoint turnaround (out &amp; back)</small>
+      </button>
+      <button type="button" class="map-route-btn" data-route="10k" data-route-color="#ff8a1a">
+        <strong>Students Run</strong>
+        <small>10 KM · Army IBA &harr; AcademySq boulevard turnaround (out &amp; back)</small>
+      </button>
+      <button type="button" class="map-route-btn" data-route="kids" data-route-color="#e056a8">
+        <strong>Kids 1K Fun Run</strong>
+        <small>1 KM · Army IBA &harr; short AIBA-loop turnaround (out &amp; back)</small>
+      </button>
     </div>
     <button type="button" class="map-fly-btn" id="flyRoute"><svg class="ic"><use href="#i-run"/></svg> Fly the Route</button>
     <div class="layer-toggle-row" role="group" aria-label="Choose basemap">
@@ -242,12 +257,13 @@ body:not(.dark) .route-fallback{opacity:.96;background:linear-gradient(135deg,rg
     <div class="map-legend">
       <h3>Legend</h3>
       <span><i class="legend-dot waypoint"></i> Waypoint</span>
-      <span><i class="legend-dot finish"></i> Finish</span>
+      <span><i class="legend-dot finish"></i> Start / Finish (Army IBA)</span>
       <span><i class="legend-dot water"></i> Water station</span>
       <span><i class="legend-dot medical"></i> Medical point</span>
       <span><i class="legend-dot km"></i> Kilometre marker</span>
+      <span><i class="legend-dot turnaround"></i> Turnaround point (out &amp; back)</span>
     </div>
-    <p class="side-note">Race day: <strong>13 November 2026</strong>, starting and finishing at AIBA, Sylhet Cantonment Road. Questions? Call <a href="tel:+8801316891926">01316891926</a> or return to the <a href="/">event homepage</a>.</p>
+    <p class="side-note">Race day: <strong>13 November 2026</strong>. Every distance <strong>starts and finishes at Army IBA, Sylhet Cantonment Road</strong> — runners go out to a turnaround point and return to the same start. Routes shown here are <em>last year&rsquo;s verified 2025 reference loops</em>; the official 2026 route is publishing soon. Questions? Call <a href="tel:+8801316891926">01316891926</a> or return to the <a href="/">event homepage</a>.</p>
   </aside>
   <div class="map-shell">
 
