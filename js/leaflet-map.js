@@ -136,7 +136,7 @@
   function init(el,data){
     if(el._leafletMap)return el._leafletMap;
     var map=L.map(el,{zoomControl:true,scrollWheelZoom:true,preferCanvas:true});
-    applyLayer(map,'street');
+    applyLayer(map, el.getAttribute('data-initial-layer')||'street');
     var line=featureByType(data,'LineString');
     if(!line){el.parentElement.classList.add('map-error');return map;}
     var coords=line.geometry.coordinates.map(function(c){return [c[1],c[0]];});
