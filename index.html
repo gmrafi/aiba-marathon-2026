@@ -310,6 +310,8 @@ footer{background:var(--footer-bg);border-top:1px solid rgba(200,241,53,.25);pad
 .copy{margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);text-align:center;color:#5e8272;font-size:13px;line-height:2;}
 .credit{margin-top:6px;font-family:'Oswald';font-size:14px;letter-spacing:.08em;color:#9fc4ae;text-transform:uppercase;}
 .credit b{color:#c8f135;font-weight:600;}
+.credit .dev-link{color:inherit;text-decoration:none;}
+.credit .dev-link:hover{text-decoration:underline;text-underline-offset:3px;}
 /* footer headings inside footer use h2 override */
 footer .sec-head h2{color:#f4f9f4;}
 /* reveal: visible by default; only JS-enabled browsers animate it in */
@@ -381,9 +383,9 @@ body.dark .mini-readout>div{background:rgba(255,255,255,.04);}
 .mco-badge small{font-family:'Inter',sans-serif;font-size:13px;color:#b8d6c2;line-height:1.5;}
 .mco-pulse{display:inline-block;width:10px;height:10px;border-radius:50%;background:#d4ff00;box-shadow:0 0 0 0 rgba(212,255,0,.75);animation:pulseRing 1.8s infinite;margin-bottom:4px;}
 @keyframes pulseRing{0%{box-shadow:0 0 0 0 rgba(212,255,0,.75);}70%{box-shadow:0 0 0 14px rgba(212,255,0,0);}100%{box-shadow:0 0 0 0 rgba(212,255,0,0);}}
-.mco-cta{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:10px 18px;background:#d4ff00;color:#062018;border-radius:999px;font-family:'Oswald',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:.2s;border:none;}
-.mco-cta:hover{background:#e8ff42;transform:translateY(-2px);box-shadow:0 6px 18px rgba(212,255,0,.45);}
-.mco-cta .ico{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;}
+
+
+
 @media(max-width:600px){.mco-badge{padding:14px 18px;max-width:88%;}.mco-badge strong{font-size:16px;}.mco-badge small{font-size:12px;}}
 
 .fallback-route-shadow{fill:none;stroke:#071812;stroke-width:18;stroke-linecap:round;stroke-linejoin:round;opacity:.65;}
@@ -512,7 +514,7 @@ body:not(.dark) .route-fallback{opacity:.94;background:linear-gradient(135deg,rg
           <div><span class="readout-label">Distance</span><strong id="mapDistance">42 KM</strong></div>
           <div><span class="readout-label">Status</span><strong id="mapDemoNote">2025 REFERENCE ROUTE</strong></div>
         </div>
-        <div class="map-coming-overlay" role="status" aria-live="polite" aria-label="Race route map coming soon"><div class="mco-badge"><span class="mco-pulse" aria-hidden="true"></span><strong>Coming Soon</strong><small>রুট ম্যাপ এখনো ফাইনাল হয়নি</small><a class="mco-cta" href="/map" aria-label="Open interactive route preview"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Open Interactive Preview</a></div></div>
+        <div class="map-coming-overlay" role="status" aria-live="polite" aria-label="Race route map coming soon"><div class="mco-badge"><span class="mco-pulse" aria-hidden="true"></span><strong>Coming Soon</strong></div></div>
         <a class="btn btn-primary map-full-cta" href="/map"><svg class="ic"><use href="#i-pin"/></svg> Open Full Interactive Map</a>
         <p class="preview-note">The dedicated map page includes Fly the Route, full markers, legend and race-day points of interest.</p>
       </div>
@@ -835,7 +837,7 @@ body:not(.dark) .route-fallback{opacity:.94;background:linear-gradient(135deg,rg
       </div>
     </div>
     <div class="copy">© 2026 AIBA Sylhet National Half Marathon • Run From Sylhet, Run For The Nation
-      <div class="credit">Designed &amp; Developed by <b>MD Golam Mubasshir Rafi</b></div>
+      <div class="credit">Designed &amp; Developed by <b><a class="dev-link" href="https://www.gmrafi.com.bd/" target="_blank" rel="noopener">MD Golam Mubasshir Rafi</a></b></div>
     </div>
   </div>
 </footer>
