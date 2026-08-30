@@ -373,6 +373,18 @@ body.dark .mini-readout>div{background:rgba(255,255,255,.04);}
 @media(max-width:900px){.map-preview-grid{grid-template-columns:1fr;}.map-shell.preview,.map-shell.preview .race-map{min-height:260px;}}
 /* Deterministic route fallback: keeps the verified reference route visible if WebGL tiles are unavailable */
 .route-fallback{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:.92;background:linear-gradient(135deg,rgba(11,61,46,.78),rgba(4,21,14,.92));}
+.map-shell.preview>.map-coming-overlay{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;padding:24px;border-radius:12px;pointer-events:auto;background:radial-gradient(ellipse at center,rgba(6,32,24,.55) 0%,rgba(6,32,24,.78) 60%,rgba(4,21,14,.88) 100%);backdrop-filter:blur(8px) saturate(140%);-webkit-backdrop-filter:blur(8px) saturate(140%);}
+.map-shell.preview .race-map,.map-shell.preview .route-fallback{pointer-events:none!important;}
+.mco-badge{display:flex;flex-direction:column;align-items:center;gap:8px;background:rgba(8,38,27,.92);border:1.5px solid rgba(212,255,0,.55);border-radius:14px;padding:18px 22px;box-shadow:0 18px 42px rgba(0,0,0,.55);max-width:320px;text-align:center;color:#fff;}
+.mco-badge strong{font-family:'Oswald',sans-serif;font-size:20px;letter-spacing:.16em;text-transform:uppercase;color:#d4ff00;text-shadow:0 0 12px rgba(212,255,0,.4);}
+.mco-badge small{font-family:'Inter',sans-serif;font-size:13px;color:#b8d6c2;line-height:1.5;}
+.mco-pulse{display:inline-block;width:10px;height:10px;border-radius:50%;background:#d4ff00;box-shadow:0 0 0 0 rgba(212,255,0,.75);animation:pulseRing 1.8s infinite;margin-bottom:4px;}
+@keyframes pulseRing{0%{box-shadow:0 0 0 0 rgba(212,255,0,.75);}70%{box-shadow:0 0 0 14px rgba(212,255,0,0);}100%{box-shadow:0 0 0 0 rgba(212,255,0,0);}}
+.mco-cta{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:10px 18px;background:#d4ff00;color:#062018;border-radius:999px;font-family:'Oswald',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:.2s;border:none;}
+.mco-cta:hover{background:#e8ff42;transform:translateY(-2px);box-shadow:0 6px 18px rgba(212,255,0,.45);}
+.mco-cta .ico{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;}
+@media(max-width:600px){.mco-badge{padding:14px 18px;max-width:88%;}.mco-badge strong{font-size:16px;}.mco-badge small{font-size:12px;}}
+
 .fallback-route-shadow{fill:none;stroke:#071812;stroke-width:18;stroke-linecap:round;stroke-linejoin:round;opacity:.65;}
 .fallback-route{fill:none;stroke:#d4ff00;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 5px rgba(212,255,0,.65));}
 .fallback-waypoint circle{fill:#d4ff00;stroke:#ffffff;stroke-width:4;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5));}
@@ -445,7 +457,7 @@ body:not(.dark) .route-fallback{opacity:.94;background:linear-gradient(135deg,rg
         <h1 class="italic-race reveal">AIBA SYLHET<br><span class="lime">NATIONAL HALF MARATHON</span><br>2026</h1>
         <div class="tagline reveal">Run From Sylhet, Run For The Nation</div>
         <div class="cta-row reveal" style="justify-content:inherit;">
-          <a class="btn btn-primary" href="https://runbangladesh.com/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ticket"/></svg> Register Now</a>
+          <a class="btn btn-primary" href="https://register.runbangladesh.com/aiba-sylhet-national-half-marathon-2026/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ticket"/></svg> Register Now</a>
           <a class="btn btn-ghost" href="#prizes"><svg class="ic"><use href="#i-trophy"/></svg> Prize Pool: BDT 300K</a>
         </div>
       </div>
@@ -499,6 +511,7 @@ body:not(.dark) .route-fallback{opacity:.94;background:linear-gradient(135deg,rg
           <div><span class="readout-label">Distance</span><strong id="mapDistance">42 KM</strong></div>
           <div><span class="readout-label">Status</span><strong id="mapDemoNote">2025 REFERENCE ROUTE</strong></div>
         </div>
+        <div class="map-coming-overlay" role="status" aria-live="polite" aria-label="Race route map coming soon"><div class="mco-badge"><span class="mco-pulse" aria-hidden="true"></span><strong>Coming Soon</strong><small>রুট ম্যাপ এখনো ফাইনাল হয়নি</small><a class="mco-cta" href="/map" aria-label="Open interactive route preview"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Open Interactive Preview</a></div></div>
         <a class="btn btn-primary map-full-cta" href="/map"><svg class="ic"><use href="#i-pin"/></svg> Open Full Interactive Map</a>
         <p class="preview-note">The dedicated map page includes Fly the Route, full markers, legend and race-day points of interest.</p>
       </div>
