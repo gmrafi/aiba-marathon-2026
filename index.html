@@ -341,7 +341,7 @@ html.js .reveal.on{opacity:1;transform:none;}
 /* Mapbox Tier 1 route module */
 .map-toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px;}
 .map-route-buttons{display:flex;gap:8px;flex-wrap:wrap;}
-.map-route-btn,.map-fly-btn{font-family:'Oswald';font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:11px 15px;cursor:pointer;transition:.2s;}
+.map-route-btn strong{display:block;font-size:14px;letter-spacing:.06em;}.map-route-btn small{display:block;margin-top:4px;font-weight:500;opacity:.95;font-size:11px;line-height:1.35;}.map-route-btn.active[data-route="half"]{background:#d4ff00!important;border-color:#d4ff00!important;color:#062018!important;box-shadow:0 6px 18px rgba(212,255,0,.45);}.map-route-btn.active[data-route="10k"]{background:#ff8a1a!important;border-color:#ff8a1a!important;color:#1a0d00!important;box-shadow:0 6px 18px rgba(255,138,26,.45);}.map-route-btn.active[data-route="kids"]{background:#e056a8!important;border-color:#e056a8!important;color:#fff!important;box-shadow:0 6px 18px rgba(224,86,168,.45);}.map-route-btn,.map-fly-btn{font-family:'Oswald';font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:11px 15px;cursor:pointer;transition:.2s;}
 .map-route-btn{border:1px solid var(--card-border);background:var(--card);color:var(--muted);}
 .map-route-btn:hover,.map-route-btn.active{background:var(--accent);border-color:var(--accent);color:#ffffff;}
 .map-fly-btn{border:1px solid var(--accent);background:var(--accent-soft);color:var(--accent);display:inline-flex;align-items:center;gap:8px;}
@@ -500,7 +500,7 @@ body:not(.dark) .route-fallback{opacity:.94;background:linear-gradient(135deg,rg
     <div class="sec-head reveal">
       <div class="kicker"><svg class="ic"><use href="#i-pin"/></svg> Find Your Way</div>
       <h2>Race <span class="accent">Route</span></h2>
-      <p>A quick preview using last year’s verified 42 KM reference route. Open the full map for every feature.</p>
+      <p>Pick your distance — 21.1K, 10K or 1K. Every course starts and finishes at <strong>Army IBA</strong> and loops back from its turnaround point (out &amp; back), shown here on last year’s verified 2025 reference route.</p>
     </div>
     <div class="map-preview-grid reveal">
       <div class="map-shell preview">
@@ -511,13 +511,13 @@ body:not(.dark) .route-fallback{opacity:.94;background:linear-gradient(135deg,rg
       </div>
       <div class="map-preview-side">
         <div class="map-route-buttons" role="group" aria-label="Choose demo route">
-          <button type="button" class="map-route-btn active" data-route="half">2025 42K Reference</button>
-          <button type="button" class="map-route-btn" data-route="10k">10K</button>
-          <button type="button" class="map-route-btn" data-route="kids">1K</button>
+          <button type="button" class="map-route-btn active" data-route="half"><strong>Half Marathon</strong><small>21.1 KM &middot; Army IBA &#8596; Midpoint turn</small></button>
+          <button type="button" class="map-route-btn" data-route="10k"><strong>Students Run</strong><small>10 KM &middot; Army IBA &#8596; AcademySq turn</small></button>
+          <button type="button" class="map-route-btn" data-route="kids"><strong>Kids 1K Fun Run</strong><small>1 KM &middot; Army IBA &#8596; Short loop turn</small></button>
         </div>
         <div class="mini-readout">
-          <div><span class="readout-label">Course</span><strong id="mapRouteName">2025 Reference Route</strong></div>
-          <div><span class="readout-label">Distance</span><strong id="mapDistance">42 KM</strong></div>
+          <div><span class="readout-label">Course</span><strong id="mapRouteName">Half Marathon 21.1 KM &middot; Army IBA &#8596; Midpoint turn</strong></div>
+          <div><span class="readout-label">Distance</span><strong id="mapDistance">21.1 KM (~116 min runner)</strong></div>
           <div><span class="readout-label">Status</span><strong id="mapDemoNote">2025 REFERENCE ROUTE</strong></div>
         </div>
         <div class="map-coming-overlay" role="status" aria-live="polite" aria-label="Official race route publishing soon"><div class="mco-badge"><span class="mco-pulse" aria-hidden="true"></span><strong>Official Route Publishing Soon</strong><small>(Currently showing last year&rsquo;s verified 2025 reference route)</small></div></div>
