@@ -18,7 +18,7 @@ Official event website for **AIBA Sylhet National Half Marathon 2026**, organise
 - **Expected participants:** 1,000
 - **Total prize pool:** BDT 300K
 - **Awards:** Strictly gender-neutral
-- **Official contact:** 01316891926
+- **Official contact:** 01571-226236
 
 ## Race Categories
 
