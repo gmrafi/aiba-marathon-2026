@@ -193,6 +193,16 @@ body.dark .map-basemap-btn.active{background:var(--accent-strong);color:#062018;
 .fallback-waypoint .fallback-label{font:700 15px Inter,Arial,sans-serif;fill:#ffffff;paint-order:stroke;stroke:#062018;stroke-width:5px;stroke-linejoin:round;text-anchor:start;}
 body:not(.dark) .route-fallback{opacity:.96;background:linear-gradient(135deg,rgba(14,49,36,.86),rgba(5,28,19,.95));}
 @media(max-width:700px){.fallback-waypoint .fallback-label{font-size:13px;}}
+
+.mco-pin{background:#d4ff00;border:2px solid #fff;border-radius:50%;width:30px;height:30px;font:700 12px Oswald;color:#06201a;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 12px rgba(0,0,0,.55);cursor:pointer;}
+.mco-pin-start{background:#ef6351;color:#fff;width:34px;height:34px;font-size:14px;}
+.mco-pin-water{background:#3c9ee8;color:#fff;}
+.mco-pin-turn {background:#ffb84d;color:#1a0d00;border-radius:8px;font-size:14px;padding:0 4px;width:auto;min-width:34px;}
+.mco-pin-aid  {background:#d9465f;color:#fff;width:26px;height:26px;font-size:11px;}
+.mco-legend{display:flex;flex-wrap:wrap;gap:6px 16px;padding:12px 14px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:10px;font:600 11px 'Inter';margin-top:10px;}
+.mco-legend span{display:inline-flex;align-items:center;gap:6px;color:var(--muted);}
+.mco-legend i{width:14px;height:14px;border-radius:50%;border:1.5px solid #fff;display:inline-block;}
+.mco-legend .li-start{background:#ef6351;} .mco-legend .li-water{background:#3c9ee8;} .mco-legend .li-turn{background:#ffb84d;border-radius:3px;} .mco-legend .li-aid{background:#d9465f;}
 </style>
 </head>
 <body>
@@ -264,7 +274,13 @@ body:not(.dark) .route-fallback{opacity:.96;background:linear-gradient(135deg,rg
       <div class="readout-card"><span class="readout-label">Status</span><strong id="mapDemoNote">2025 REFERENCE ROUTE</strong></div>
       <div class="readout-card"><span class="readout-label">Active layer</span><strong id="basemapNote">OpenStreetMap street tiles</strong></div>
     </div>
-    <div class="map-legend">
+            <div class="mco-legend" aria-label="Official route markers" style="margin-top:14px">
+          <span><i class="li-start"></i> Start & End (Army IBA)</span>
+          <span><i class="li-water"></i> Hydration Point</span>
+          <span><i class="li-turn"></i> U-Turn / Turnaround</span>
+          <span><i class="li-aid"></i> Aid / Full Hydration</span>
+        </div>
+<div class="map-legend">
       <h3>Legend</h3>
       <span><i class="legend-dot waypoint"></i> Waypoint</span>
       <span><i class="legend-dot finish"></i> Start / Finish (Army IBA)</span>
