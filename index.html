@@ -22,7 +22,7 @@
   };
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
+<style>.route-cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:18px;justify-content:center;}.route-meta{color:var(--muted);font:600 13px "Inter";letter-spacing:.04em;}
 /* ===== THEME VARIABLES (Light = default) ===== */
 :root{
   --bg:#f4f6f1;
@@ -346,30 +346,19 @@ html.js .reveal.on{opacity:1;transform:none;}
 .reg-strip b{color:var(--text-strong);}
 
 </style>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 <style>
 /* Mapbox Tier 1 route module */
 .map-toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px;}
-.map-route-buttons{display:flex;gap:8px;flex-wrap:wrap;}
-.map-route-btn strong{display:block;font-size:14px;letter-spacing:.06em;}.map-route-btn small{display:block;margin-top:4px;font-weight:500;opacity:.95;font-size:11px;line-height:1.35;}.map-route-btn.active[data-route="half"]{background:#d4ff00!important;border-color:#d4ff00!important;color:#062018!important;box-shadow:0 6px 18px rgba(212,255,0,.45);}.map-route-btn.active[data-route="10k"]{background:#ff8a1a!important;border-color:#ff8a1a!important;color:#1a0d00!important;box-shadow:0 6px 18px rgba(255,138,26,.45);}.map-route-btn.active[data-route="kids"]{background:#e056a8!important;border-color:#e056a8!important;color:#fff!important;box-shadow:0 6px 18px rgba(224,86,168,.45);}.map-route-btn,.map-fly-btn{font-family:'Oswald';font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:11px 15px;cursor:pointer;transition:.2s;}
-a.map-route-btn{display:flex;flex-direction:column;gap:4px;text-align:left;text-decoration:none;cursor:pointer;color:inherit;}.map-route-btn{border:1px solid var(--card-border);background:var(--card);color:var(--muted);}
-.map-route-btn:hover,.map-route-btn.active{background:var(--accent);border-color:var(--accent);color:#ffffff;}
-.map-fly-btn{border:1px solid var(--accent);background:var(--accent-soft);color:var(--accent);display:inline-flex;align-items:center;gap:8px;}
-.map-fly-btn:hover{background:var(--accent);color:#ffffff;transform:translateY(-1px);}
-.map-shell{position:relative;min-height:500px;border-radius:16px;overflow:hidden;border:1px solid var(--card-border);background:#122a24;box-shadow:0 16px 36px rgba(0,0,0,.18);}
-.race-map{position:absolute;inset:0;min-height:500px;}
-.map-error-message{display:none;position:absolute;inset:0;z-index:2;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:#0b3d2e;color:#fff;text-align:center;padding:30px;}.map-error-message strong{font-family:'Oswald';font-size:24px;color:#d4ff00;}.map-error-message span{color:#b1d0bd;font-size:13px;}
-.map-shell.map-error .map-error-message{display:flex;}.map-shell.map-error .race-map{display:none;}
-.map-marker{width:29px;height:29px;border-radius:50%;border:2px solid #fff;background:var(--green-800);color:#fff;font:700 11px 'Oswald';display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.45);cursor:pointer;}
+a.map-error-message strong{font-family:'Oswald';font-size:24px;color:#d4ff00;}.map-error-message span{color:#b1d0bd;font-size:13px;}
+.map-shell.map-error .map-marker{width:29px;height:29px;border-radius:50%;border:2px solid #fff;background:var(--green-800);color:#fff;font:700 11px 'Oswald';display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.45);cursor:pointer;}
 .marker-waypoint{width:36px;height:36px;background:#d4ff00;color:#062018;font-size:18px;border-color:#ffffff;}
 .marker-start{background:#d4ff00;color:#062018;}.marker-finish{background:#ef6351;}.marker-water{background:#3c9ee8;}.marker-medical{background:#d9465f;}.marker-km{background:#f2b84b;color:#062018;width:32px;height:24px;border-radius:6px;}
 .mapboxgl-popup-content{background:#08261b;color:#f4f9f4;border:1px solid rgba(200,241,53,.45);border-radius:8px;padding:10px 12px;box-shadow:0 8px 26px rgba(0,0,0,.35);}.mapboxgl-popup-tip{border-top-color:#08261b!important;}.map-popup{display:flex;align-items:center;gap:9px;min-width:150px;}.popup-icon{width:25px;height:25px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#c8f135;color:#062018;font:700 11px 'Oswald';}.map-popup strong{display:block;font:600 14px 'Oswald';}.map-popup small{display:block;color:#a9c7b5;font:11px 'Inter';margin-top:2px;}
 .leaflet-star-marker{background:transparent;border:0;}.leaflet-star-marker span{display:flex;width:38px;height:38px;align-items:center;justify-content:center;border:3px solid #fff;border-radius:50%;background:#d4ff00;color:#062018;font:700 24px Arial;box-shadow:0 2px 12px rgba(0,0,0,.6);}.waypoint-label{background:#062018!important;color:#fff!important;border:1px solid #d4ff00!important;border-radius:5px!important;padding:4px 7px!important;font:700 12px Inter,Arial,sans-serif!important;box-shadow:0 2px 8px rgba(0,0,0,.45);}.waypoint-label:before{border-right-color:#d4ff00!important;}
-.map-readout{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px;}.map-readout>div{padding:15px;background:var(--card);border:1px solid var(--card-border);border-radius:10px;}.readout-label{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:5px;}.map-readout strong{display:block;font-family:'Oswald';font-size:16px;color:var(--text-strong);line-height:1.25;}.map-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:12px;}.map-legend span{display:inline-flex;align-items:center;gap:6px;}.legend-dot{width:10px;height:10px;border-radius:50%;display:inline-block;background:#d4ff00;}.legend-dot.waypoint{background:#d4ff00;}.legend-dot.finish{background:#ef6351;}.legend-dot.water{background:#3c9ee8;}.legend-dot.medical{background:#d9465f;}.legend-dot.km{background:#f2b84b;border-radius:3px;}
-body.dark .map-readout>div{background:rgba(10,40,29,.65);}
-@media(max-width:700px){.map-shell,.race-map{min-height:430px;}.map-readout{grid-template-columns:repeat(2,1fr);}.map-toolbar{align-items:stretch;}.map-fly-btn{justify-content:center;}.map-route-btn{font-size:11px;padding:10px 11px;}}
-@media(max-width:430px){.map-readout{grid-template-columns:1fr 1fr;}.map-readout strong{font-size:14px;}.map-legend{gap:10px;}}
+.map-readout>div{padding:15px;background:var(--card);border:1px solid var(--card-border);border-radius:10px;}.map-legend span{display:inline-flex;align-items:center;gap:6px;}body.dark .map-readout>div{background:rgba(10,40,29,.65);}
+@media(max-width:700px){.map-shell,.map-toolbar{align-items:stretch;}}
+@media(max-width:430px){}
 
 
 /* Compact homepage map preview + nav Map button */
@@ -377,36 +366,21 @@ body.dark .map-readout>div{background:rgba(10,40,29,.65);}
 .nav-links a.nav-map:hover{background:rgba(200,241,53,.18);}
 body:not(.dark) .nav-links a.nav-map{border-color:rgba(77,124,15,.55);color:#3f6212;background:rgba(77,124,15,.08);}
 body:not(.dark) .nav-links a.nav-map:hover{background:rgba(77,124,15,.16);}
-.map-preview-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:stretch;}
-.map-shell.preview{min-height:300px;}
-.map-shell.preview .race-map{min-height:300px;}
-.map-preview-side{display:flex;flex-direction:column;gap:14px;background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:20px;}
-.map-preview-side .map-route-buttons{display:flex;gap:8px;flex-wrap:wrap;}
-.map-preview-side .map-route-btn{flex:1;min-width:70px;text-align:center;justify-content:center;padding:11px 10px;}
-.map-legend{display:flex;flex-direction:column;gap:8px;color:var(--muted);font-size:12.5px;padding:14px;border:1px solid var(--card-border);border-radius:10px;background:var(--card);}.map-legend h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-strong);margin-bottom:2px;}.map-legend span{display:inline-flex;align-items:center;gap:8px;}.legend-dot{width:11px;height:11px;border-radius:50%;display:inline-block;background:#d4ff00;flex:none;}.legend-dot.waypoint{background:#d4ff00;}.legend-dot.finish{background:#ef6351;}.legend-dot.water{background:#3c9ee8;}.legend-dot.medical{background:#d9465f;}.legend-dot.km{background:#f2b84b;border-radius:3px;}.legend-dot.turnaround{background:#ffb84d;box-shadow:0 0 0 2px rgba(255,184,77,.25);}
-.mini-readout{display:flex;flex-direction:column;gap:10px;}
+.map-shell.preview .map-preview-side .map-preview-side .map-legend h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-strong);margin-bottom:2px;}.map-legend span{display:inline-flex;align-items:center;gap:8px;}.mini-readout{display:flex;flex-direction:column;gap:10px;}
 .mini-readout>div{padding:12px 14px;background:var(--bg);border:1px solid var(--card-border);border-radius:10px;}
 body.dark .mini-readout>div{background:rgba(255,255,255,.04);}
-.map-full-cta{justify-content:center;text-align:center;}
 .preview-note{font-size:12px;color:var(--muted);line-height:1.6;}
-@media(max-width:900px){.map-preview-grid{grid-template-columns:1fr;}.map-shell.preview,.map-shell.preview .race-map{min-height:260px;}}
+@media(max-width:900px){.map-shell.preview,.map-shell.preview }
 /* Deterministic route fallback: keeps the route visible if WebGL tiles are unavailable */
-.route-fallback{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:.92;background:linear-gradient(135deg,rgba(11,61,46,.78),rgba(4,21,14,.92));}
-.map-shell.preview .race-map,.map-shell.preview .route-fallback{pointer-events:none!important;}
-.mco-pulse{display:inline-block;width:10px;height:10px;border-radius:50%;background:#d4ff00;box-shadow:0 0 0 0 rgba(212,255,0,.75);animation:pulseRing 1.8s infinite;margin-bottom:4px;}
+.map-shell.preview .race-map,.map-shell.preview .mco-pulse{display:inline-block;width:10px;height:10px;border-radius:50%;background:#d4ff00;box-shadow:0 0 0 0 rgba(212,255,0,.75);animation:pulseRing 1.8s infinite;margin-bottom:4px;}
 @keyframes pulseRing{0%{box-shadow:0 0 0 0 rgba(212,255,0,.75);}70%{box-shadow:0 0 0 14px rgba(212,255,0,0);}100%{box-shadow:0 0 0 0 rgba(212,255,0,0);}}
 
 
 
 @media(max-width:600px){}
 
-.fallback-route-shadow{fill:none;stroke:#071812;stroke-width:18;stroke-linecap:round;stroke-linejoin:round;opacity:.65;}
-.fallback-route{fill:none;stroke:#d4ff00;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 5px rgba(212,255,0,.65));}
-.fallback-waypoint circle{fill:#d4ff00;stroke:#ffffff;stroke-width:4;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5));}
 .fallback-waypoint text{font:800 20px Arial,sans-serif;fill:#062018;}
-.fallback-waypoint .fallback-label{font:700 15px Inter,Arial,sans-serif;fill:#ffffff;paint-order:stroke;stroke:#062018;stroke-width:5px;stroke-linejoin:round;text-anchor:start;}
-body:not(.dark) .route-fallback{opacity:.94;background:linear-gradient(135deg,rgba(14,49,36,.86),rgba(5,28,19,.95));}
-@media(max-width:700px){.fallback-waypoint .fallback-label{font-size:13px;}}
+body:not(.dark) @media(max-width:700px){}
 
 
 </style>
@@ -450,9 +424,7 @@ body:not(.dark) .route-fallback{opacity:.94;background:linear-gradient(135deg,rg
         <li><a href="#categories">Categories</a></li>
         <li><a href="#facilities">Facilities</a></li>
         <li><a href="#prizes">Prizes</a></li>
-        <li><a href="#route">Route</a></li>
-        <li><a class="nav-map" href="/map">Map</a></li>
-        <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
       </ul>
       <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode" title="Toggle theme" onclick="toggleAibaTheme()">
         <svg class="ic icon-sun"><use href="#i-sun"/></svg>
@@ -502,45 +474,18 @@ body:not(.dark) .route-fallback{opacity:.94;background:linear-gradient(135deg,rg
 </header>
 
 <section id="route" class="alt">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="kicker"><svg class="ic"><use href="#i-pin"/></svg> Find Your Way</div>
-      <h2>Race <span class="accent">Route</span></h2>
-      <p>Pick your distance — 21.1K, 10K or 1K. Every course starts and finishes at <strong>Army IBA</strong> and loops back from its turnaround point (out &amp; back), with official hydration points and turnaround markers pinned on the map.</p>
-    </div>
-    <div class="map-preview-grid reveal">
-      <div class="map-shell preview">
-        <svg class="route-fallback" viewBox="0 0 1000 650" preserveAspectRatio="none" aria-hidden="true"><path class="fallback-route-shadow" d="M 945.0 55.0 L 943.2 62.2 L 941.2 71.6 L 940.5 73.9 L 936.0 88.7 L 933.0 99.0 L 928.9 112.5 L 921.0 137.0 L 913.4 161.5 L 912.6 163.8 L 910.5 170.8 L 906.9 182.3 L 905.5 186.8 L 904.7 189.4 L 904.4 190.6 L 902.7 195.4 L 902.2 197.1 L 900.1 204.1 L 899.4 206.5 L 898.5 209.2 L 896.7 214.5 L 896.4 215.6 L 895.7 217.3 L 893.4 223.6 L 891.6 227.5 L 891.1 228.6 L 890.6 229.8 L 889.6 231.7 L 888.9 232.9 L 886.4 237.0 L 885.5 238.7 L 882.7 243.6 L 882.0 244.8 L 878.9 248.8 L 877.1 251.1 L 870.2 259.9 L 860.7 270.7 L 859.0 272.9 L 858.2 273.5 L 855.7 276.8 L 852.5 280.6 L 843.2 291.7 L 837.5 298.3 L 836.8 299.1 L 834.2 302.2 L 831.6 306.1 L 824.2 314.8 L 814.7 325.9 L 799.6 343.5 L 796.1 347.7 L 791.2 353.4 L 782.5 364.9 L 775.7 373.0 L 773.2 375.9 L 767.2 382.3 L 764.3 385.8 L 758.2 393.3 L 752.9 401.5 L 751.8 403.6 L 750.9 406.0 L 748.7 413.9 L 747.6 420.9 L 747.2 426.4 L 746.9 429.5 L 746.9 430.1 L 747.2 432.0 L 747.2 434.0 L 747.3 434.4 L 747.3 434.9 L 747.2 438.2 L 747.2 443.5 L 746.8 449.7 L 746.3 455.0 L 742.9 472.8 L 741.1 479.8 L 740.2 483.4 L 739.9 484.5 L 738.7 489.1 L 738.2 491.4 L 737.7 493.3 L 737.6 493.8 L 737.1 496.2 L 736.4 498.5 L 735.9 500.9 L 735.4 503.2 L 733.3 510.4 L 733.1 511.2 L 732.9 512.0 L 731.2 518.2 L 729.8 524.7 L 725.9 539.6 L 725.3 541.9 L 723.2 548.8 L 722.8 550.2 L 722.4 551.1 L 721.6 553.4 L 720.8 555.7 L 720.6 556.2 L 718.4 562.2 L 717.1 566.0 L 711.6 581.2 L 710.3 584.3 L 709.9 585.5 L 709.6 587.1 L 709.1 588.8 L 708.8 590.2 L 708.7 590.4 L 708.4 591.3 L 708.2 593.3 L 708.2 593.7 L 707.8 594.9 L 707.7 595.0 L 707.6 595.0 L 707.4 595.0 L 707.3 595.0 L 705.9 593.9 L 704.2 592.6 L 700.1 588.8 L 697.3 586.8 L 692.8 583.4 L 691.1 582.2 L 683.8 576.5 L 683.1 575.9 L 682.4 575.3 L 673.7 568.6 L 673.3 568.4 L 667.2 563.7 L 656.7 555.4 L 654.7 553.9 L 653.7 553.1 L 653.0 552.6 L 648.9 549.4 L 636.3 539.5 L 633.9 537.5 L 630.9 535.0 L 612.9 521.0 L 611.7 520.2 L 605.3 515.2 L 604.2 514.3 L 595.7 507.7 L 591.8 504.7 L 589.3 502.8 L 585.8 500.1 L 585.5 499.8 L 582.3 497.3 L 574.8 491.6 L 573.5 490.6 L 570.4 488.2 L 568.1 486.3 L 566.5 485.1 L 565.0 483.9 L 555.4 476.6 L 551.5 473.6 L 546.8 469.9 L 536.6 462.1 L 532.9 459.0 L 526.3 453.9 L 522.0 450.6 L 519.6 448.7 L 518.1 447.7 L 513.6 444.2 L 510.9 441.9 L 507.1 439.1 L 505.9 438.3 L 503.9 436.7 L 503.0 436.1 L 499.9 434.0 L 497.6 432.4 L 496.9 431.9 L 493.7 430.0 L 492.7 429.5 L 489.9 427.8 L 486.7 426.1 L 480.7 423.2 L 480.2 422.9 L 476.6 421.3 L 472.4 419.4 L 471.5 419.0 L 469.4 418.1 L 469.0 417.9 L 466.4 416.9 L 463.9 416.1 L 461.2 415.1 L 458.7 414.3 L 458.5 414.2 L 451.5 412.1 L 445.7 410.2 L 437.5 408.0 L 436.2 407.8 L 431.7 406.7 L 428.4 405.9 L 426.5 405.5 L 423.7 405.0 L 419.0 404.0 L 410.5 401.9 L 408.0 401.3 L 406.6 400.9 L 403.0 400.0 L 397.2 398.8 L 394.6 398.4 L 392.5 397.9 L 388.2 397.1 L 387.6 396.9 L 380.8 395.3 L 374.0 393.6 L 370.1 392.7 L 369.2 392.4 L 366.1 391.7 L 365.3 391.6 L 362.6 391.0 L 361.8 390.9 L 358.1 390.2 L 357.7 390.2 L 355.3 389.6 L 352.2 388.9 L 347.0 387.7 L 344.0 387.0 L 336.2 385.2 L 332.6 384.6 L 325.7 383.3 L 320.2 382.5 L 315.1 381.9 L 305.2 380.6 L 291.4 378.9 L 283.9 377.8 L 277.3 377.0 L 273.3 376.5 L 272.7 376.3 L 266.8 375.1 L 264.1 374.4 L 260.8 374.0 L 254.1 373.1 L 251.3 372.8 L 250.4 372.7 L 244.2 371.8 L 237.8 371.0 L 233.2 370.3 L 225.8 369.2 L 220.9 368.4 L 220.7 368.4 L 215.3 367.8 L 214.5 367.6 L 206.4 366.6 L 202.3 365.9 L 198.8 365.3 L 194.3 364.7 L 188.9 364.0 L 185.5 363.5 L 178.9 362.7 L 164.5 360.7 L 163.2 360.4 L 158.7 359.9 L 143.5 357.7 L 143.1 357.6 L 140.6 357.2 L 140.3 357.1 L 135.4 356.1 L 131.1 355.0 L 126.3 353.3 L 123.5 352.1 L 119.4 350.2 L 116.3 348.9 L 111.5 346.5 L 108.6 344.9 L 107.1 344.1 L 104.6 342.5 L 104.1 342.2 L 102.1 340.9 L 101.8 340.6 L 99.6 339.0 L 96.3 336.3 L 94.5 335.0 L 93.6 334.4 L 90.8 332.2 L 90.6 332.0 L 87.8 329.5 L 86.3 328.0 L 84.3 326.0 L 81.5 323.1 L 80.0 321.3 L 79.4 321.6 L 77.4 323.2 L 75.1 325.5 L 73.8 326.7 L 72.1 328.0 L 71.8 328.1 L 69.8 329.6 L 67.8 331.0 L 64.9 332.4 L 63.5 332.8 L 62.5 333.1 L 60.8 332.7 L 58.9 334.0 L 57.5 334.6 L 57.5 334.3 L 57.4 334.2 L 57.4 334.0 L 57.3 333.9 L 57.3 333.8 L 57.1 333.6 L 57.0 333.4 L 56.3 333.2 L 55.5 332.2 L 55.4 331.6 L 55.1 331.1 L 55.0 330.8"/><path class="fallback-route" d="M 945.0 55.0 L 943.2 62.2 L 941.2 71.6 L 940.5 73.9 L 936.0 88.7 L 933.0 99.0 L 928.9 112.5 L 921.0 137.0 L 913.4 161.5 L 912.6 163.8 L 910.5 170.8 L 906.9 182.3 L 905.5 186.8 L 904.7 189.4 L 904.4 190.6 L 902.7 195.4 L 902.2 197.1 L 900.1 204.1 L 899.4 206.5 L 898.5 209.2 L 896.7 214.5 L 896.4 215.6 L 895.7 217.3 L 893.4 223.6 L 891.6 227.5 L 891.1 228.6 L 890.6 229.8 L 889.6 231.7 L 888.9 232.9 L 886.4 237.0 L 885.5 238.7 L 882.7 243.6 L 882.0 244.8 L 878.9 248.8 L 877.1 251.1 L 870.2 259.9 L 860.7 270.7 L 859.0 272.9 L 858.2 273.5 L 855.7 276.8 L 852.5 280.6 L 843.2 291.7 L 837.5 298.3 L 836.8 299.1 L 834.2 302.2 L 831.6 306.1 L 824.2 314.8 L 814.7 325.9 L 799.6 343.5 L 796.1 347.7 L 791.2 353.4 L 782.5 364.9 L 775.7 373.0 L 773.2 375.9 L 767.2 382.3 L 764.3 385.8 L 758.2 393.3 L 752.9 401.5 L 751.8 403.6 L 750.9 406.0 L 748.7 413.9 L 747.6 420.9 L 747.2 426.4 L 746.9 429.5 L 746.9 430.1 L 747.2 432.0 L 747.2 434.0 L 747.3 434.4 L 747.3 434.9 L 747.2 438.2 L 747.2 443.5 L 746.8 449.7 L 746.3 455.0 L 742.9 472.8 L 741.1 479.8 L 740.2 483.4 L 739.9 484.5 L 738.7 489.1 L 738.2 491.4 L 737.7 493.3 L 737.6 493.8 L 737.1 496.2 L 736.4 498.5 L 735.9 500.9 L 735.4 503.2 L 733.3 510.4 L 733.1 511.2 L 732.9 512.0 L 731.2 518.2 L 729.8 524.7 L 725.9 539.6 L 725.3 541.9 L 723.2 548.8 L 722.8 550.2 L 722.4 551.1 L 721.6 553.4 L 720.8 555.7 L 720.6 556.2 L 718.4 562.2 L 717.1 566.0 L 711.6 581.2 L 710.3 584.3 L 709.9 585.5 L 709.6 587.1 L 709.1 588.8 L 708.8 590.2 L 708.7 590.4 L 708.4 591.3 L 708.2 593.3 L 708.2 593.7 L 707.8 594.9 L 707.7 595.0 L 707.6 595.0 L 707.4 595.0 L 707.3 595.0 L 705.9 593.9 L 704.2 592.6 L 700.1 588.8 L 697.3 586.8 L 692.8 583.4 L 691.1 582.2 L 683.8 576.5 L 683.1 575.9 L 682.4 575.3 L 673.7 568.6 L 673.3 568.4 L 667.2 563.7 L 656.7 555.4 L 654.7 553.9 L 653.7 553.1 L 653.0 552.6 L 648.9 549.4 L 636.3 539.5 L 633.9 537.5 L 630.9 535.0 L 612.9 521.0 L 611.7 520.2 L 605.3 515.2 L 604.2 514.3 L 595.7 507.7 L 591.8 504.7 L 589.3 502.8 L 585.8 500.1 L 585.5 499.8 L 582.3 497.3 L 574.8 491.6 L 573.5 490.6 L 570.4 488.2 L 568.1 486.3 L 566.5 485.1 L 565.0 483.9 L 555.4 476.6 L 551.5 473.6 L 546.8 469.9 L 536.6 462.1 L 532.9 459.0 L 526.3 453.9 L 522.0 450.6 L 519.6 448.7 L 518.1 447.7 L 513.6 444.2 L 510.9 441.9 L 507.1 439.1 L 505.9 438.3 L 503.9 436.7 L 503.0 436.1 L 499.9 434.0 L 497.6 432.4 L 496.9 431.9 L 493.7 430.0 L 492.7 429.5 L 489.9 427.8 L 486.7 426.1 L 480.7 423.2 L 480.2 422.9 L 476.6 421.3 L 472.4 419.4 L 471.5 419.0 L 469.4 418.1 L 469.0 417.9 L 466.4 416.9 L 463.9 416.1 L 461.2 415.1 L 458.7 414.3 L 458.5 414.2 L 451.5 412.1 L 445.7 410.2 L 437.5 408.0 L 436.2 407.8 L 431.7 406.7 L 428.4 405.9 L 426.5 405.5 L 423.7 405.0 L 419.0 404.0 L 410.5 401.9 L 408.0 401.3 L 406.6 400.9 L 403.0 400.0 L 397.2 398.8 L 394.6 398.4 L 392.5 397.9 L 388.2 397.1 L 387.6 396.9 L 380.8 395.3 L 374.0 393.6 L 370.1 392.7 L 369.2 392.4 L 366.1 391.7 L 365.3 391.6 L 362.6 391.0 L 361.8 390.9 L 358.1 390.2 L 357.7 390.2 L 355.3 389.6 L 352.2 388.9 L 347.0 387.7 L 344.0 387.0 L 336.2 385.2 L 332.6 384.6 L 325.7 383.3 L 320.2 382.5 L 315.1 381.9 L 305.2 380.6 L 291.4 378.9 L 283.9 377.8 L 277.3 377.0 L 273.3 376.5 L 272.7 376.3 L 266.8 375.1 L 264.1 374.4 L 260.8 374.0 L 254.1 373.1 L 251.3 372.8 L 250.4 372.7 L 244.2 371.8 L 237.8 371.0 L 233.2 370.3 L 225.8 369.2 L 220.9 368.4 L 220.7 368.4 L 215.3 367.8 L 214.5 367.6 L 206.4 366.6 L 202.3 365.9 L 198.8 365.3 L 194.3 364.7 L 188.9 364.0 L 185.5 363.5 L 178.9 362.7 L 164.5 360.7 L 163.2 360.4 L 158.7 359.9 L 143.5 357.7 L 143.1 357.6 L 140.6 357.2 L 140.3 357.1 L 135.4 356.1 L 131.1 355.0 L 126.3 353.3 L 123.5 352.1 L 119.4 350.2 L 116.3 348.9 L 111.5 346.5 L 108.6 344.9 L 107.1 344.1 L 104.6 342.5 L 104.1 342.2 L 102.1 340.9 L 101.8 340.6 L 99.6 339.0 L 96.3 336.3 L 94.5 335.0 L 93.6 334.4 L 90.8 332.2 L 90.6 332.0 L 87.8 329.5 L 86.3 328.0 L 84.3 326.0 L 81.5 323.1 L 80.0 321.3 L 79.4 321.6 L 77.4 323.2 L 75.1 325.5 L 73.8 326.7 L 72.1 328.0 L 71.8 328.1 L 69.8 329.6 L 67.8 331.0 L 64.9 332.4 L 63.5 332.8 L 62.5 333.1 L 60.8 332.7 L 58.9 334.0 L 57.5 334.6 L 57.5 334.3 L 57.4 334.2 L 57.4 334.0 L 57.3 333.9 L 57.3 333.8 L 57.1 333.6 L 57.0 333.4 L 56.3 333.2 L 55.5 332.2 L 55.4 331.6 L 55.1 331.1 L 55.0 330.8"/><g class="fallback-waypoint"><circle cx="935.8" cy="52.9" r="17"/><text x="935.8" y="58.9" text-anchor="middle">★</text><text class="fallback-label" x="958.8" y="56.9">AIBA Sylhet</text></g><g class="fallback-waypoint"><circle cx="707.9" cy="595.9" r="17"/><text x="707.9" y="601.9" text-anchor="middle">★</text><text class="fallback-label" x="730.9" y="599.9">Academy Square</text></g><g class="fallback-waypoint"><circle cx="57.2" cy="330.3" r="17"/><text x="57.2" y="336.3" text-anchor="middle">★</text><text class="fallback-label" x="80.2" y="334.3">Humayun Rashid Chottor</text></g></svg>
-        <div id="raceMap" class="race-map" data-initial-layer="satellite" aria-label="Interactive race route preview"></div>
-        
-        <div class="map-error-message"><strong>Map preview unavailable</strong><span>The official route will appear here when map data is available.</span></div>
-      </div>
-      <div class="map-preview-side">
-        <div class="map-route-buttons" role="group" aria-label="Choose your race distance">
-          <a class="map-route-btn active" data-route="half" href="/map?route=half" aria-label="Open Half Marathon 21.1 KM map"><strong>Half Marathon</strong><small>21.1 KM &middot; Army IBA &#8596; Gotatikor Point turn</small></a>
-          <a class="map-route-btn" data-route="10k" href="/map?route=10k" aria-label="Open 10K map"><strong>Students Run</strong><small>10 KM &middot; Army IBA &#8596; Academia Sq Sreerampur turn</small></a>
-          <a class="map-route-btn" data-route="kids" href="/map?route=kids" aria-label="Open Kids 1K map"><strong>Kids 1K Fun Run</strong><small>1 KM &middot; Army IBA &#8596; Short loop turn</small></a>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Find the Route</span>
+        <h2 class="section-title">Race <em>Route</em></h2>
+        <p class="section-lead">Three distances, all starting and finishing at <strong>Army IBA</strong>, Sylhet Cantonment Road. Tap below to open the interactive map — switch between courses, see hydration and turnaround markers, or fly the full route.</p>
+        <div class="route-cta-row reveal">
+          <a class="btn btn-primary" href="/map"><svg class="ic"><use href="#i-pin"/></svg> Open Interactive Map</a>
+          <span class="route-meta">21.1 KM &middot; 10 KM &middot; 1 KM &middot; Sun, 13 Nov 2026</span>
         </div>
-        <div class="mini-readout">
-          <div><span class="readout-label">Course</span><strong id="mapRouteName">Half Marathon 21.1 KM &middot; Army IBA &#8596; Midpoint turn</strong></div>
-          <div><span class="readout-label">Distance</span><strong id="mapDistance">21.1 KM (~116 min runner)</strong></div>
-          <div><span class="readout-label">Status</span><strong id="mapDemoNote">LIVE INTERACTIVE MAP</strong></div>
-        </div>
-                <div class="map-legend">
-          <h3>Legend</h3>
-          <span><i class="legend-dot waypoint"></i> Waypoint</span>
-          <span><i class="legend-dot finish"></i> Start / Finish (Army IBA)</span>
-          <span><i class="legend-dot water"></i> Water station</span>
-          <span><i class="legend-dot medical"></i> Medical point</span>
-          <span><i class="legend-dot km"></i> Kilometre marker</span>
-          <span><i class="legend-dot turnaround"></i> Turnaround point (out &amp; back)</span>
-        </div>
-        <a class="btn btn-primary map-full-cta" href="/map"><svg class="ic"><use href="#i-pin"/></svg> Open Full Interactive Map</a>
-        <p class="preview-note">The dedicated map page includes Fly the Route, full markers, legend and race-day points of interest.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 <!-- EARLY BIRD -->
 <section id="earlybird" class="alt">
@@ -917,7 +862,5 @@ window.addEventListener('load', function(){
 </script>
 
 <script src="js/config.js?v=20260903c"></script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js'"></script>
-<script src="js/leaflet-map.js?v=20260903c"></script>
 </body>
 </html>

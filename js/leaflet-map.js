@@ -193,6 +193,9 @@
     document.querySelectorAll('[data-route]').forEach(function(btn){
       btn.addEventListener('click', function(e){
         e.preventDefault();
+        var _ready=document.querySelectorAll('.race-map'); _ready.forEach(function(el){
+          if(!el._routeLayers || !el._routeLayers.route){ init(el, boot_data || window._mapData); }
+        });
         document.querySelectorAll('[data-route]').forEach(function(b){b.classList.toggle('active', b===btn);});
         var label = btn.getAttribute('data-route');
         var labelText = label==='kids'
@@ -205,6 +208,7 @@
         document.querySelectorAll('.race-map').forEach(function(el){
           var m = el._leafletMap;
           if(!m || !el._routeLayers) return;
+          if(!el._routeLayers || !el._routeLayers.route || !el._routeLayers.shadow) return;
           el._routeLayers.route.setStyle({color: main, dashArray: '10,8', weight: 6});
           el._routeLayers.shadow.setStyle({color: colors.outline, weight: 14});
           var coords = el._routeLayers.shadow.getLatLngs();
@@ -248,6 +252,7 @@
   }
 
   function addOfficialMarkersSet(map, el, label){
+    if(!map) return;
     if (el._officialMarkers) {
       el._officialMarkers.forEach(function(mk){ try { map.removeLayer(mk); } catch(_){} });
       el._officialMarkers = [];
