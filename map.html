@@ -132,7 +132,7 @@ body.dark .map-fly-btn:hover{color:#062018;background:var(--accent-strong);}
 .race-map{position:absolute;inset:0;width:100%;height:100%;min-height:1px;z-index:1;background:#152d27;}
 .map-overlay-badge{position:absolute;left:16px;top:16px;z-index:3;background:rgba(6,32,24,.9);border:1px solid rgba(200,241,53,.6);border-radius:8px;padding:9px 12px;color:#d4ff00;pointer-events:none;}
 .map-overlay-badge span{display:block;font-family:'Oswald';font-weight:700;font-size:13px;letter-spacing:.12em;}
-.map-overlay-badge small{display:block;color:#b1d0bd;font-size:10px;margin-top:3px;}
+.map-overlay-badge{font-family:"Inter";font-weight:600;}.map-overlay-badge strong{display:block;color:#d4ff00;font-size:12px;letter-spacing:.08em;}.map-overlay-badge small{display:block;color:#b1d0bd;font-size:10px;margin-top:3px;}
 .map-error-message{display:none;position:absolute;inset:0;z-index:2;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:#0b3d2e;color:#fff;text-align:center;padding:30px;}
 .map-error-message strong{font-family:'Oswald';font-size:24px;color:#d4ff00;}
 .map-error-message span{color:#b1d0bd;font-size:13px;}
@@ -294,7 +294,7 @@ body:not(.dark) .route-fallback{opacity:.96;background:linear-gradient(135deg,rg
   <div class="map-shell">
 
     <div id="raceMap" class="race-map" aria-label="Interactive demo race route map" data-initial-layer="satellite" data-official-half="24.89866|91.9459066|start|0|Start & End Point: Army IBA Campus, Sylhet Cantonment::24.8942|91.94535|water|0.5|Hydration Point 1 (0.5 km)::24.87826|91.93622|water|2.5|Hydration Point 2 (2.5 km)::24.85808|91.9276761|aid|5.0|Hydration Point 3 (5.0 km) - Extra Hydration - Academia Square Sylhet::24.87165|91.90775|water|7.5|Hydration Point 4 (7.5 km)::24.87793|91.8756369|turn|10.5|U-Turn Point (10.5 km) - Gotatikor Point" data-official-10k="24.89866|91.9459066|start|0|Start & End Point: Army IBA Campus, Sylhet Cantonment::24.8942|91.94535|water|0.5|Hydration Point 1 (0.5 km)::24.87826|91.93622|water|2.5|Hydration Point 2 (2.5 km)::24.85808|91.9276761|turn|5.0|Hydration Point 3 - Turnaround - Full Hydration - Academia Square Sreerampur Sylhet" data-official-kids="24.89866|91.9459066|start|0|Start & End: Army IBA Campus::24.891|91.94|turn|0.5|Quick loop turnaround (~0.5 km)"></div>
-    <div class="map-overlay-badge"><span>DEMO ROUTE</span><small>Replace before publication</small></div>
+    <div class="map-overlay-badge" role="status" aria-live="polite"><strong>Official Route Publishing Soon</strong><small>Currently showing last year&rsquo;s verified 2025 reference route</small></div>
     <div class="map-error-message"><strong>Map preview unavailable</strong><span>The official route will appear here when map data is available.</span></div>
   </div>
 </main>

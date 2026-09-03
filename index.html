@@ -344,6 +344,8 @@ html.js .reveal.on{opacity:1;transform:none;}
 }
 .reg-strip p{color:var(--muted);font-size:14px;line-height:1.6;}
 .reg-strip b{color:var(--text-strong);}
+
+.official-route-notice{display:flex;flex-direction:column;align-items:center;gap:3px;background:rgba(15,32,28,.74);border:1px solid rgba(255,255,255,.10);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:10px 18px;border-radius:999px;color:#fff;font-family:"Inter";text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.35);}.official-route-notice strong{font-family:"Oswald";font-size:14px;letter-spacing:.1em;color:#d4ff00;}.official-route-notice small{color:#cfd9d4;font-size:11.5px;font-weight:500;}
 </style>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
@@ -352,7 +354,7 @@ html.js .reveal.on{opacity:1;transform:none;}
 .map-toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px;}
 .map-route-buttons{display:flex;gap:8px;flex-wrap:wrap;}
 .map-route-btn strong{display:block;font-size:14px;letter-spacing:.06em;}.map-route-btn small{display:block;margin-top:4px;font-weight:500;opacity:.95;font-size:11px;line-height:1.35;}.map-route-btn.active[data-route="half"]{background:#d4ff00!important;border-color:#d4ff00!important;color:#062018!important;box-shadow:0 6px 18px rgba(212,255,0,.45);}.map-route-btn.active[data-route="10k"]{background:#ff8a1a!important;border-color:#ff8a1a!important;color:#1a0d00!important;box-shadow:0 6px 18px rgba(255,138,26,.45);}.map-route-btn.active[data-route="kids"]{background:#e056a8!important;border-color:#e056a8!important;color:#fff!important;box-shadow:0 6px 18px rgba(224,86,168,.45);}.map-route-btn,.map-fly-btn{font-family:'Oswald';font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:11px 15px;cursor:pointer;transition:.2s;}
-.map-route-btn{border:1px solid var(--card-border);background:var(--card);color:var(--muted);}
+a.map-route-btn{display:flex;flex-direction:column;gap:4px;text-align:left;text-decoration:none;cursor:pointer;color:inherit;}.map-route-btn{border:1px solid var(--card-border);background:var(--card);color:var(--muted);}
 .map-route-btn:hover,.map-route-btn.active{background:var(--accent);border-color:var(--accent);color:#ffffff;}
 .map-fly-btn{border:1px solid var(--accent);background:var(--accent-soft);color:var(--accent);display:inline-flex;align-items:center;gap:8px;}
 .map-fly-btn:hover{background:var(--accent);color:#ffffff;transform:translateY(-1px);}
@@ -521,14 +523,19 @@ body:not(.dark) .route-fallback{opacity:.94;background:linear-gradient(135deg,rg
       </div>
       <div class="map-preview-side">
         <div class="map-route-buttons" role="group" aria-label="Choose demo route">
-          <button type="button" class="map-route-btn active" data-route="half"><strong>Half Marathon</strong><small>21.1 KM &middot; Army IBA &#8596; Midpoint turn</small></button>
-          <button type="button" class="map-route-btn" data-route="10k"><strong>Students Run</strong><small>10 KM &middot; Army IBA &#8596; AcademySq turn</small></button>
-          <button type="button" class="map-route-btn" data-route="kids"><strong>Kids 1K Fun Run</strong><small>1 KM &middot; Army IBA &#8596; Short loop turn</small></button>
+          <a class="map-route-btn active" data-route="half" href="/map?route=half" aria-label="Open Half Marathon 21.1 KM map"><strong>Half Marathon</strong><small>21.1 KM &middot; Army IBA &#8596; Gotatikor Point turn</small></a>
+          <a class="map-route-btn" data-route="10k" href="/map?route=10k" aria-label="Open 10K map"><strong>Students Run</strong><small>10 KM &middot; Army IBA &#8596; Academia Sq Sreerampur turn</small></a>
+          <a class="map-route-btn" data-route="kids" href="/map?route=kids" aria-label="Open Kids 1K map"><strong>Kids 1K Fun Run</strong><small>1 KM &middot; Army IBA &#8596; Short loop turn</small></a>
         </div>
         <div class="mini-readout">
           <div><span class="readout-label">Course</span><strong id="mapRouteName">Half Marathon 21.1 KM &middot; Army IBA &#8596; Midpoint turn</strong></div>
           <div><span class="readout-label">Distance</span><strong id="mapDistance">21.1 KM (~116 min runner)</strong></div>
           <div><span class="readout-label">Status</span><strong id="mapDemoNote">2025 REFERENCE ROUTE</strong></div>
+        </div>
+        
+        <div class="official-route-notice" role="status" aria-live="polite">
+          <strong>Official Route Publishing Soon</strong>
+          <small>Currently showing last year&rsquo;s verified 2025 reference route</small>
         </div>
         <div class="map-coming-overlay" role="status" aria-live="polite" aria-label="Official race route publishing soon"><div class="mco-badge"><span class="mco-pulse" aria-hidden="true"></span><strong>Official Route Publishing Soon</strong><small>(Currently showing last year&rsquo;s verified 2025 reference route)</small></div></div>
         <a class="btn btn-primary map-full-cta" href="/map"><svg class="ic"><use href="#i-pin"/></svg> Open Full Interactive Map</a>
