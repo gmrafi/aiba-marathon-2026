@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BJ7ZPJBCY3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BJ7ZPJBCY3');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>স্ট্রাভা | AIBA Sylhet National Half Marathon 2026</title>
+<meta name="description" content="আপনার Strava training দেখান। AIBA Sylhet Half Marathon 2026 — public embed, কোনো API key/token/backend নেই।">
+<script>
+  document.documentElement.classList.add('js');
+  window.toggleAibaTheme = function(){
+    document.body.classList.toggle('dark');
+    try{localStorage.setItem('aiba-theme', document.body.classList.contains('dark') ? 'dark' : 'light');}catch(e){}
+  };
+  try{var saved=localStorage.getItem('aiba-theme'); if(saved==='dark'){document.body.classList.add('dark');}}catch(e){}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f6f1; --bg-alt:#e9efe4; --card:#ffffff; --card-border:#d9e3d3;
+  --text:#0b3d2e; --text-strong:#062018; --muted:#3f5f4d;
+  --accent:#4d7c0f; --accent-strong:#3f6212; --accent-bright:#65a30d;
+  --accent-soft:rgba(77,124,15,.10); --accent-border:rgba(77,124,15,.38);
+  --btn-bg:#0b3d2e; --btn-text:#d4ff00;
+  --footer-bg:#0b3d2e; --divider:#d9e3d3;
+  --strava:#fc4c02;
+}
+body.dark{
+  --bg:#0a1a14; --bg-alt:#0d2419; --card:#102a21; --card-border:#1c4838;
+  --text:#cfd9d4; --text-strong:#eaffd9; --muted:#8aa79a;
+  --accent-bright:#c8f135;
+  --footer-bg:#08170f; --divider:#1c4838;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;background-image:repeating-linear-gradient(135deg,rgba(77,124,15,.05) 0 1px,transparent 1px 18px),linear-gradient(180deg,var(--bg),var(--bg-alt));background-attachment:fixed;}
+.container{max-width:1180px;margin:0 auto;padding:0 22px;}
+a{color:var(--accent-strong);text-decoration:none;}
+a:hover{color:var(--accent);}
+h1,h2,h3{font-family:'Oswald','Inter',sans-serif;color:var(--text-strong);font-weight:600;margin:0 0 14px;}
+p{margin:0 0 12px;}
+.box{background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:24px;margin:14px 0;box-shadow:0 6px 18px rgba(0,0,0,.04);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:8px;font-family:'Oswald';font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:.2s;border:none;background:var(--btn-bg);color:var(--btn-text);text-decoration:none;}
+.btn:hover{background:var(--accent);color:#fff;}
+.btn-ghost{background:transparent;border:1.5px solid var(--accent-border);color:var(--text-strong);}
+.btn-ghost:hover{background:var(--accent-soft);}
+.btn-strava{background:var(--strava);color:#fff;}
+.btn-strava:hover{background:#e34400;color:#fff;}
+.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:14px 26px;background:rgba(11,61,46,.96);color:#eaffd9;border-bottom:2px solid rgba(200,241,53,.35);backdrop-filter:blur(10px);}
+body:not(.dark) .topbar{background:rgba(244,246,241,.94);color:#0b3d2e;border-bottom:2px solid rgba(77,124,15,.42);}
+.brand-logos{display:flex;align-items:center;gap:10px;}
+.brand-logos img{height:36px;width:auto;display:none;}
+.brand-sep{width:1px;height:34px;background:rgba(200,241,53,.3);margin:0 2px;}
+body:not(.dark) .brand-sep{background:#d9e3d3;}
+.badge-a{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,#0b3d2e,#3f6212);display:inline-flex;align-items:center;justify-content:center;color:#d4ff00;font:700 14px 'Oswald';}
+body:not(.dark) .badge-a{background:linear-gradient(135deg,#c8f135,#65a30d);color:#062018;}
+.brand-text strong{font-family:'Oswald';font-size:14px;letter-spacing:.04em;color:inherit;}
+.brand-text small{color:inherit;font-size:11px;opacity:.7;letter-spacing:.06em;}
+.brand-accent{color:var(--accent-bright);}
+.nav-links{display:flex;align-items:center;gap:18px;margin-left:auto;margin-right:14px;flex-wrap:wrap;}
+.nav-links a{font-family:'Oswald';font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:inherit;font-weight:500;padding:4px 2px;}
+.nav-links a:hover,.nav-links a.active{color:var(--accent-bright);}
+.nav-links a.nav-map{border:1.5px solid rgba(200,241,53,.55);color:#d4ff00;border-radius:6px;padding:6px 13px;background:rgba(200,241,53,.08);}
+body:not(.dark) .nav-links a.nav-map{border-color:rgba(77,124,15,.55);color:#3f6212;background:rgba(77,124,15,.08);}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:transparent;border:1px solid currentColor;color:inherit;cursor:pointer;}
+.theme-toggle:hover{background:var(--accent-soft);}
+.theme-toggle svg{width:18px;height:18px;}
+.icon-moon{display:none;}
+body.dark .icon-sun{display:none;}
+body.dark .icon-moon{display:inline;}
+.hero{padding:48px 0 20px;text-align:center;}
+.hero h1{font-size:clamp(30px,5vw,46px);line-height:1.05;color:var(--text-strong);text-transform:uppercase;}
+.hero h1 em{color:var(--strava);font-style:normal;}
+.hero .lead{color:var(--muted);font-size:15.5px;max-width:680px;margin:14px auto 0;}
+.hero .badges{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:18px;}
+.badge-pill{display:inline-flex;gap:6px;padding:6px 12px;border-radius:99px;border:1px solid var(--card-border);background:var(--card);font:600 12px 'Inter';color:var(--text-strong);}
+.section-title{font-size:26px;margin:0 0 6px;display:flex;align-items:center;gap:10px;}
+.step-num{font-family:'Oswald';font-weight:700;background:var(--strava);color:#fff;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;font-size:14px;}
+.section-sub{color:var(--muted);font-size:14px;margin-bottom:16px;}
+.activity-form{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;margin-top:14px;}
+.activity-form input{flex:1 1 240px;font-family:'Inter';font-size:16px;padding:12px 14px;border-radius:8px;border:1.5px solid var(--card-border);background:var(--bg-alt);color:var(--text-strong);}
+.activity-form input:focus{outline:0;border-color:var(--accent);}
+.form-hint{font-size:13px;color:var(--muted);margin-top:10px;}
+.form-hint code{background:var(--bg-alt);padding:1px 6px;border-radius:4px;border:1px solid var(--card-border);font-family:'Menlo','Consolas',monospace;}
+.latest-activity{margin-top:18px;}
+.status-line{font:600 12px 'Inter';color:var(--muted);margin-top:10px;display:flex;gap:10px;align-items:center;}
+.status-line .dot{width:8px;height:8px;border-radius:50%;background:var(--accent-bright);}
+.embed-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-top:14px;}
+.embed-card{display:flex;flex-direction:column;gap:10px;background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:18px;}
+.embed-card h3{font-family:'Oswald';font-size:18px;margin:0;color:var(--text-strong);text-transform:uppercase;}
+.embed-card .meta{color:var(--muted);font-size:12.5px;margin:0;}
+.embed-card .strava-embed-placeholder{width:100%;min-height:170px;border:2px dashed var(--card-border);border-radius:10px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-size:13px;padding:18px;}
+.embed-card .strava-embed-placeholder.has-content{min-height:auto;border:none;padding:0;}
+.embed-card iframe{width:100%;border:0;border-radius:10px;}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:14px;}
+.stats-grid .stat{background:var(--bg-alt);border:1px solid var(--card-border);border-radius:10px;padding:18px;text-align:center;}
+.stats-grid .stat b{display:block;font-family:'Oswald';font-size:30px;color:var(--text-strong);}
+.stats-grid .stat span{font:600 11.5px 'Inter';color:var(--muted);text-transform:uppercase;letter-spacing:.1em;}
+.faq-list{margin-top:14px;}
+.faq-list details{background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:14px 18px;margin-bottom:10px;}
+.faq-list summary{font:600 14px 'Inter';color:var(--text-strong);cursor:pointer;list-style:none;}
+.faq-list summary::-webkit-details-marker{display:none;}
+.faq-list p{margin-top:8px;font-size:14px;color:var(--muted);}
+footer{background:var(--footer-bg);color:#eaffd9;padding:36px 0 16px;margin-top:50px;border-top:2px solid var(--accent);}
+body:not(.dark) footer{color:#eaffd9;}
+footer .container{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
+footer h4{font:700 14px 'Oswald';text-transform:uppercase;letter-spacing:.08em;margin:0 0 10px;}
+footer p{font-size:13px;margin:0 0 6px;}
+footer a{color:inherit;text-decoration:underline;}
+footer .credit{font-size:12px;opacity:.7;margin-top:24px;text-align:center;border-top:1px solid rgba(255,255,255,.1);padding-top:14px;}
+@media(max-width:780px){.nav-links{margin-right:0;gap:10px;}.nav-links a{font-size:11px;}.activity-form input{flex-basis:100%;}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand-logos">
+    <a href="/" aria-label="Home"><span class="badge-a">A</span></a>
+    <div class="brand-sep"></div>
+    <div class="brand-text">
+      <strong>AIBA SYLHET <span class="brand-accent">NHM 2026</span></strong>
+      <small>National Half Marathon</small>
+    </div>
+  </div>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="/route">Route</a>
+    <a class="nav-map" href="/map">Map</a>
+    <a class="active" href="/strava">স্ট্রাভা</a>
+  </nav>
+  <button class="theme-toggle" onclick="toggleAibaTheme()" aria-label="Toggle theme">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.5 4.5l1.8 1.8M17.7 17.7l1.8 1.8M19.5 4.5l-1.8 1.8M6.3 17.7l-1.8 1.8"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 7.5 7.5 0 1 0 20 13.5z"/></svg>
+  </button>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>আপনার <em>Strava</em> training দেখান</h1>
+    <p class="lead">Race day-এর আগে আপনার preparation দেখান — official Strava embed ব্যবহার করে। <br><strong>কোনো লগইন, token, বা backend নেই। শুধু আপনার activity ID paste করুন।</strong></p>
+    <div class="badges">
+      <span class="badge-pill">🔓 ১০০% Public</span>
+      <span class="badge-pill">🔑 কোনো API key নেই</span>
+      <span class="badge-pill">🌐 কোনো third-party backend নেই</span>
+      <span class="badge-pill">⚡ Static GitHub Pages</span>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+
+  <section class="box">
+    <h2 class="section-title"><span class="step-num">১</span> আপনার সর্বশেষ রান / রাইড যোগ করুন</h2>
+    <p class="section-sub">একবার Activity ID paste করলে পরেরবার থেকেই আপনার browser-এ embed দেখাবে (localStorage-এ save থাকে)।</p>
+    <form id="runner-form" class="activity-form">
+      <input id="activityId" type="text" inputmode="numeric" placeholder="যেমন: 11331075161" autocomplete="off" aria-label="Strava Activity ID">
+      <button class="btn btn-strava" type="submit">Embed করুন</button>
+      <button type="button" class="btn btn-ghost" id="clearBtn">Clear</button>
+    </form>
+    <p class="form-hint"><strong>Activity ID পাবেন যেভাবে:</strong> Strava-তে আপনার activity URL দেখুন, যেমন <code>strava.com/activities/<strong>11331075161</strong></code> — শেষের সংখ্যাটাই ID। Privacy <strong>Everyone</strong> হতে হবে (Followers only হলে embed দেখা যাবে না)।</p>
+    <div id="latestWrap" class="latest-activity" hidden>
+      <h3 style="font-size:16px;margin-bottom:8px;">📌 আপনার সর্বশেষ Activity</h3>
+      <div id="latestEmbed"></div>
+      <div class="status-line"><span class="dot"></span> <span id="statusText">Saved locally — auto-shows next visit. Stripe শুধু আপনার browser-এ রাখে, server-এ যায় না।</span></div>
+    </div>
+  </section>
+
+  <section class="box">
+    <h2 class="section-title"><span class="step-num">২</span> Race Day Embeds (Organizer-filled)</h2>
+    <p class="section-sub">আয়োজক race day-এর পরে winning activities' ID <code>strava.html</code>-এ বসাবে — ততক্ষণ পর্যন্ত organizer-placeholder দেখাচ্ছে।</p>
+    <div class="embed-grid">
+      <div class="embed-card">
+        <h3>Half Marathon Winner</h3>
+        <p class="meta">21.1 KM · Top finisher activity</p>
+        <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="" data-style="standard"><span>📍 Organizer এখানে winning activity ID বসাবে<br>(HTML-এর <code>data-embed-id=""</code> এ সংখ্যা paste)</span></div>
+      </div>
+      <div class="embed-card">
+        <h3>10K Winner Activity</h3>
+        <p class="meta">10 KM · Students Run category</p>
+        <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="" data-style="standard"><span>📍 Organizer এখানে winning activity ID বসাবে</span></div>
+      </div>
+      <div class="embed-card">
+        <h3>Official Race Route</h3>
+        <p class="meta">21.1 KM route preview (Strava route embed)</p>
+        <div class="strava-embed-placeholder" data-embed-type="route" data-embed-id="" data-style="standard"><span>📍 Organizer route upload করলে ID বসাবে</span></div>
+      </div>
+    </div>
+    <p class="form-hint">⬆️ উপরের 3টি slot কাজ করার জন্য আয়োজক <code>data-embed-id=""</code> এর মধ্যে ১০-সংখ্যার ID paste করে <code>git commit</code> করবে — server-এ কিছুই চলে না।</p>
+  </section>
+
+  <section class="box">
+    <h2 class="section-title"><span class="step-num">৩</span> Race Statistics</h2>
+    <p class="section-sub">Organizer চাইলে নিচের সংখ্যাগুলো race day-এর পরে এই পেজের <code>strava-stats</code> JSON block-এ manually আপডেট করবে। কোনো API call নেই।</p>
+    <div class="stats-grid">
+      <div class="stat"><b id="s-total">—</b><span>Total finishers</span></div>
+      <div class="stat"><b id="s-avg">—</b><span>Average pace</span></div>
+      <div class="stat"><b id="s-top">TBD</b><span>Top finisher</span></div>
+      <div class="stat"><b id="s-club">—</b><span>Active runners</span></div>
+    </div>
+  </section>
+
+  <section class="box">
+    <h2 class="section-title"><span class="step-num">৪</span> প্রায়শই জিজ্ঞাসিত প্রশ্ন</h2>
+    <div class="faq-list">
+      <details>
+        <summary>🔒 Activity ID paste করা কি নিরাপদ?</summary>
+        <p>১০০%। ID হলো শুধু একটা public reference number। আপনার সার্ভারে কিছুই যায় না — শুধু Strava-র নিজের <code>strava-embeds.com/embed.js</code> script browser থেকে public activity fetch করে iframe render করে (<a href="https://support.strava.com/en-us/articles/15402053" target="_blank" rel="noopener">source</a>)। Activity ID আপনার browser-এর <code>localStorage</code>-এ save হয়, "Clear" বাটনে চাপলে মুছে যায়।</p>
+      </details>
+      <details>
+        <summary>🤖 "Latest Activity" কেন auto-pull হয় না?</summary>
+        <p>Strava-র public embed script শুধু fixed ID render করে। সর্বশেষ activity auto-fetch করতে <strong>Strava API + OAuth</strong> দিয়ে আপনার <code>access_token</code> browser-এ রাখতে হতো — যেটা <strong>credential leak</strong> এবং <a href="https://developers.strava.com/docs/getting-started/" target="_blank" rel="noopener">Strava-র brand guideline</a>-এর violation। তাই আমরা paste-and-go পদ্ধতি ব্যবহার করছি — user-friendly, secure, transparent।</p>
+      </details>
+      <details>
+        <summary>⚙️ কোনো backend/relay/service আছে?</summary>
+        <p><strong>না।</strong> এই পেজটি pure static HTML — GitHub Pages / Vercel-এ হোস্ট করা। External traffic শুধুমাত্র তিনটি: (1) Google Fonts (font-face), (2) Google Analytics (analytics), (3) Strava-র নিজের public embed script (activity rendering)। কোনো proxy, Cloudflare Worker, GitHub Actions cron, বা refresh-token flow নেই।</p>
+      </details>
+      <details>
+        <summary>👀 "Followers only" privacy হলে কী হবে?</summary>
+        <p>অন্য user-দের কাছে "Activity not available" দেখাবে। Embed paste করার আগে Strava app → activity → "Edit" → Visibility <strong>Everyone</strong> করে save করুন।</p>
+      </details>
+      <details>
+        <summary>🗑️ আমার localStorage data কীভাবে মুছব?</summary>
+        <p>উপরের "Clear" বাটন চাপুন, অথবা browser DevTools Console-এ <code>localStorage.removeItem('aiba_runner_activity_id')</code> রান করুন।</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <h4>📞 Contact</h4>
+      <p>Phone: <a href="tel:+8801571226236">+880 1571-226236</a></p>
+    </div>
+    <div>
+      <h4>🌐 Community</h4>
+      <p><a href="https://www.facebook.com/share/g/1KiBDoCWFm/" target="_blank" rel="noopener">Official Facebook Group →</a><br>
+      <a href="https://www.facebook.com/share/17o1LNCC4v/" target="_blank" rel="noopener">Official Event Page →</a></p>
+    </div>
+    <div>
+      <h4>📅 Event</h4>
+      <p>13 November 2026 · Friday<br>AIBA, Sylhet Cantonment Road</p>
+    </div>
+    <div>
+      <h4>🏃 Organizer</h4>
+      <p>Army IBA Hiking And Trekking Club<br>Bangladesh Army Institute of Business Administration, Sylhet</p>
+    </div>
+  </div>
+  <div class="container">
+    <p class="credit">Designed &amp; Developed by <a href="https://www.gmrafi.com.bd/" target="_blank" rel="noopener">MD Golam Mubasshir Rafi</a></p>
+  </div>
+</footer>
+
+<!--
+  Static stats JSON — organizer manually edits these after race day.
+  No backend, no API call, no proxy. Open this file, change numbers, git push.
+-->
+<script type="application/json" id="strava-stats">
+{
+  "totalFinishers": 0,
+  "avgPace": "—",
+  "topFinisher": "TBD",
+  "activeRunners": 0
+}
+</script>
+
+<!--
+  Inline runtime JS. Only uses:
+   1. localStorage           (for runner's activity id — client-only)
+   2. Strava public embed    (strava-embeds.com/embed.js — official, public)
+   3. JSON.parse on inline   (for organizer-edited stats)
+  NO access_token, NO refresh_token, NO server endpoint, NO fetch() to non-Strava.
+-->
+<script>
+(function(){
+  'use strict';
+  var STRAVA_EMBED_SRC = 'https://strava-embeds.com/embed.js';
+
+  function loadEmbedScript(retry){
+    retry = retry || 0;
+    if (window.StravaEmbed && window.StravaEmbed.init){
+      try { window.StravaEmbed.init(); } catch(e){}
+      return;
+    }
+    if (retry > 50) return;                 // give up after 5s
+    setTimeout(function(){ loadEmbedScript(retry+1); }, 100);
+  }
+
+  function triggerEmbedScript(){
+    if (window.StravaEmbed) return;
+    var s = document.createElement('script');
+    s.src = STRAVA_EMBED_SRC;
+    s.async = true;
+    document.body.appendChild(s);
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    /* === RACE STATS (server-free, organizer-edited inline JSON) === */
+    try {
+      var raw = document.getElementById('strava-stats').textContent;
+      var stats = JSON.parse(raw || '{}');
+      var map = { 's-total': stats.totalFinishers, 's-avg': stats.avgPace,
+                  's-top': stats.topFinisher, 's-club': stats.activeRunners };
+      Object.keys(map).forEach(function(k){
+        var el = document.getElementById(k);
+        if (el && (map[k] !== undefined && map[k] !== null)) el.textContent = map[k];
+      });
+    } catch(e){}
+
+    /* === FORM: paste your Strava activity id === */
+    var form     = document.getElementById('runner-form');
+    var input    = document.getElementById('activityId');
+    var wrap     = document.getElementById('latestWrap');
+    var embed    = document.getElementById('latestEmbed');
+    var clearBtn = document.getElementById('clearBtn');
+
+    var VALID = /^\d{6,15}$/;
+
+    function renderLatest(id){
+      embed.innerHTML =
+        '<div class="strava-embed-placeholder" data-embed-type="activity" ' +
+        'data-embed-id="' + id + '" data-style="standard"></div>';
+      wrap.hidden = false;
+      triggerEmbedScript();
+      loadEmbedScript();
+    }
+
+    try {
+      var saved = localStorage.getItem('aiba_runner_activity_id');
+      if (saved && VALID.test(saved)){
+        input.value = saved;
+        renderLatest(saved);
+      }
+    } catch(e){}
+
+    if (form){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var id = (input.value || '').trim();
+        if (!VALID.test(id)){
+          alert('দয়া করে শুধু সংখ্যা দিন (যেমন 11331075161)।');
+          input.focus();
+          return;
+        }
+        try { localStorage.setItem('aiba_runner_activity_id', id); } catch(e){}
+        renderLatest(id);
+      });
+    }
+
+    if (clearBtn){
+      clearBtn.addEventListener('click', function(){
+        try { localStorage.removeItem('aiba_runner_activity_id'); } catch(e){}
+        embed.innerHTML = '';
+        wrap.hidden = true;
+        input.value = '';
+      });
+    }
+
+    /* === Always load Strava embed script for organizer-filled slots === */
+    triggerEmbedScript();
+  });
+})();
+</script>
+
+</body>
+</html>
