@@ -2,7 +2,7 @@
   var routeURL='data/route-reference-2025.geojson';
   var maps=[];
   var colors={route:'#d4ff00',outline:'#071812',water:'#3c9ee8',medical:'#d9465f',km:'#f2b84b',start:'#d4ff00',finish:'#ef6351',turn:'#ffb84d',routeHalf:'#d4ff00',route10k:'#ff8a1a',routeKids:'#e056a8'};
-  function popup(p){return '<strong>'+ (p.name||'Route point') +'</strong><br><small>'+ (p.detail||'2025 reference route') +'</small>';}
+  function popup(p){return '<strong>'+ (p.name||'Route point') +'</strong><br><small>'+ (p.detail||'Race route point') +'</small>';}
   function makeMarker(map,f){
     var p=f.properties||{}, c=f.geometry.coordinates;
     var icon=L.divIcon({className:'leaflet-star-marker',html:'<span>★</span>',iconSize:[42,42],iconAnchor:[21,21]});
@@ -191,7 +191,8 @@
   }
   function refreshButtons(){
     document.querySelectorAll('[data-route]').forEach(function(btn){
-      btn.addEventListener('click', function(){
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
         document.querySelectorAll('[data-route]').forEach(function(b){b.classList.toggle('active', b===btn);});
         var label = btn.getAttribute('data-route');
         var labelText = label==='kids'

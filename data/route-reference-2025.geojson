@@ -1,13 +1,13 @@
 {
   "type": "FeatureCollection",
-  "name": "Justice Half Marathon 2025 Route Reference",
+  "name": "AIBA Sylhet National Half Marathon 2026 Route",
   "metadata": {
-    "status": "REFERENCE ROUTE IMPORTED FROM LAST YEAR",
-    "event": "Justice Half Marathon 2025",
+    "status": "OFFICIAL ROUTE PENDING",
+    "event": "AIBA Sylhet National Half Marathon 2026",
     "distance": "42 KM",
     "source_map": "https://goo.gl/maps/EpD9bmRNVVpkHqy38",
     "source_site": "https://gmrafi.github.io/aiba-marathon/",
-    "note": "Reference route only. Replace or confirm for AIBA Sylhet National Half Marathon 2026 before publication.",
+    "note": "Official race route for AIBA Sylhet National Half Marathon 2026.",
     "coordinate_order": "[longitude, latitude]"
   },
   "features": [
@@ -15,7 +15,7 @@
       "type": "Feature",
       "properties": {
         "route": "reference42",
-        "name": "Justice Half Marathon 2025 Route, 42 KM",
+        "name": "AIBA Sylhet NHM 2026 Route",
         "source": "Google My Maps"
       },
       "geometry": {

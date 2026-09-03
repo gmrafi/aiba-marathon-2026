@@ -85,13 +85,7 @@ body.dark .icon-moon{display:block;}
 .side-head h1{font-size:24px;text-transform:uppercase;color:var(--text-strong);line-height:1.15;}
 .side-head h1 .accent{color:var(--accent-strong);}
 .side-head p{color:var(--muted);font-size:13px;line-height:1.6;margin-top:8px;}
-.demo-badge{
-  display:flex;flex-direction:column;gap:3px;padding:12px 14px;border-radius:10px;
-  background:rgba(239,180,60,.12);border:1px dashed rgba(217,150,20,.55);
-}
 .demo-badge strong{font-family:'Oswald';font-size:13px;letter-spacing:.12em;color:#b07c14;text-transform:uppercase;}
-body.dark .demo-badge strong{color:#f2b84b;}
-.demo-badge span{font-size:11.5px;color:var(--muted);line-height:1.5;}
 .map-route-buttons{display:flex;flex-direction:column;gap:8px;}
 .map-route-btn,.map-fly-btn{
   font-family:'Oswald';font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
@@ -237,13 +231,9 @@ body:not(.dark) .route-fallback{opacity:.96;background:linear-gradient(135deg,rg
   <aside class="map-side">
     <div class="side-head">
       <h1>Race Route <span class="accent">Explorer</span></h1>
-      <p>Explore last year’s verified 42 KM reference route. Switch preview segments, tap waypoint stars, or fly the route for a cinematic preview.</p>
+      <p>Explore the race route for all three distances — switch between Half Marathon, 10K and Kids 1K, tap the pinned hydration and U-turn markers, or fly the route for a cinematic preview.</p>
     </div>
-    <div class="demo-badge">
-      <strong>2025 Reference Route</strong>
-      <span>Justice Half Marathon 2025 route reference. Confirm before using for 2026.</span>
-    </div>
-    <div class="map-route-buttons" role="group" aria-label="Choose demo route">
+    <div class="map-route-buttons" role="group" aria-label="Choose your race distance">
       <button type="button" class="map-route-btn active" data-route="half" data-route-color="#d4ff00">
         <strong>Half Marathon</strong>
         <small>21.1 KM · Army IBA &harr; Midpoint turnaround (out &amp; back)</small>
@@ -268,10 +258,10 @@ body:not(.dark) .route-fallback{opacity:.96;background:linear-gradient(135deg,rg
       </div>
     </div>
     <div class="side-readout">
-      <div class="readout-card"><span class="readout-label">Selected course</span><strong id="mapRouteName">2025 Reference Route</strong></div>
+      <div class="readout-card"><span class="readout-label">Selected course</span><strong id="mapRouteName">Half Marathon 21.1 KM &middot; Army IBA &#8596; Gotatikor Point turnaround</strong></div>
       <div class="readout-card"><span class="readout-label">Distance</span><strong id="mapDistance">21.1 KM</strong></div>
       <div class="readout-card"><span class="readout-label">Map points</span><strong>Start, Finish, Water, Medical</strong></div>
-      <div class="readout-card"><span class="readout-label">Status</span><strong id="mapDemoNote">2025 REFERENCE ROUTE</strong></div>
+      <div class="readout-card"><span class="readout-label">Status</span><strong id="mapDemoNote">OFFICIAL ROUTE COMING SOON</strong></div>
       <div class="readout-card"><span class="readout-label">Active layer</span><strong id="basemapNote">OpenStreetMap street tiles</strong></div>
     </div>
             <div class="mco-legend" aria-label="Official route markers" style="margin-top:14px">
@@ -293,13 +283,13 @@ body:not(.dark) .route-fallback{opacity:.96;background:linear-gradient(135deg,rg
   </aside>
   <div class="map-shell">
 
-    <div id="raceMap" class="race-map" aria-label="Interactive demo race route map" data-initial-layer="satellite" data-official-half="24.89866|91.9459066|start|0|Start & End Point: Army IBA Campus, Sylhet Cantonment::24.8942|91.94535|water|0.5|Hydration Point 1 (0.5 km)::24.87826|91.93622|water|2.5|Hydration Point 2 (2.5 km)::24.85808|91.9276761|aid|5.0|Hydration Point 3 (5.0 km) - Extra Hydration - Academia Square Sylhet::24.87165|91.90775|water|7.5|Hydration Point 4 (7.5 km)::24.87793|91.8756369|turn|10.5|U-Turn Point (10.5 km) - Gotatikor Point" data-official-10k="24.89866|91.9459066|start|0|Start & End Point: Army IBA Campus, Sylhet Cantonment::24.8942|91.94535|water|0.5|Hydration Point 1 (0.5 km)::24.87826|91.93622|water|2.5|Hydration Point 2 (2.5 km)::24.85808|91.9276761|turn|5.0|Hydration Point 3 - Turnaround - Full Hydration - Academia Square Sreerampur Sylhet" data-official-kids="24.89866|91.9459066|start|0|Start & End: Army IBA Campus::24.891|91.94|turn|0.5|Quick loop turnaround (~0.5 km)"></div>
-    <div class="map-overlay-badge" role="status" aria-live="polite"><strong>Official Route Publishing Soon</strong><small>Currently showing last year&rsquo;s verified 2025 reference route</small></div>
+    <div id="raceMap" class="race-map" aria-label="Interactive race route map" data-initial-layer="satellite" data-official-half="24.89866|91.9459066|start|0|Start & End Point: Army IBA Campus, Sylhet Cantonment::24.8942|91.94535|water|0.5|Hydration Point 1 (0.5 km)::24.87826|91.93622|water|2.5|Hydration Point 2 (2.5 km)::24.85808|91.9276761|aid|5.0|Hydration Point 3 (5.0 km) - Extra Hydration - Academia Square Sylhet::24.87165|91.90775|water|7.5|Hydration Point 4 (7.5 km)::24.87793|91.8756369|turn|10.5|U-Turn Point (10.5 km) - Gotatikor Point" data-official-10k="24.89866|91.9459066|start|0|Start & End Point: Army IBA Campus, Sylhet Cantonment::24.8942|91.94535|water|0.5|Hydration Point 1 (0.5 km)::24.87826|91.93622|water|2.5|Hydration Point 2 (2.5 km)::24.85808|91.9276761|turn|5.0|Hydration Point 3 - Turnaround - Full Hydration - Academia Square Sreerampur Sylhet" data-official-kids="24.89866|91.9459066|start|0|Start & End: Army IBA Campus::24.891|91.94|turn|0.5|Quick loop turnaround (~0.5 km)"></div>
+    <div class="map-overlay-badge" role="status" aria-live="polite"><strong>Official Route Publishing Soon</strong><small>(Final 2026 route will be published here)</small></div>
     <div class="map-error-message"><strong>Map preview unavailable</strong><span>The official route will appear here when map data is available.</span></div>
   </div>
 </main>
 
-<script src="js/config.js?v=20260903"></script>
+<script src="js/config.js?v=20260903b"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js'"></script>
 <script>
 (function(){
@@ -339,6 +329,6 @@ body:not(.dark) .route-fallback{opacity:.96;background:linear-gradient(135deg,rg
 })();
 </script>
 
-<script src="js/leaflet-map.js?v=20260903"></script>
+<script src="js/leaflet-map.js?v=20260903b"></script>
 </body>
 </html>
