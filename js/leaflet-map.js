@@ -193,9 +193,6 @@
     document.querySelectorAll('[data-route]').forEach(function(btn){
       btn.addEventListener('click', function(e){
         e.preventDefault();
-        var _ready=document.querySelectorAll('.race-map'); _ready.forEach(function(el){
-          if(!el._routeLayers || !el._routeLayers.route){ init(el, boot_data || window._mapData); }
-        });
         document.querySelectorAll('[data-route]').forEach(function(b){b.classList.toggle('active', b===btn);});
         var label = btn.getAttribute('data-route');
         var labelText = label==='kids'
