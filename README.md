@@ -12,7 +12,6 @@ Official event website for **AIBA Sylhet National Half Marathon 2026**, organise
 - **Event:** AIBA Sylhet National Half Marathon 2026
 - **Tagline:** Run From Sylhet, Run For The Nation
 - **Event date:** 13 November 2026
-- **Early Bird registration:** Starts 01 September 2026
 - **Venue:** Army Institute of Business Administration (AIBA), Sylhet Cantonment Road, Sylhet, Bangladesh
 - **Organiser:** Army IBA Hiking And Trekking Club, Sylhet
 - **Expected participants:** 1,000
@@ -30,21 +29,19 @@ Official event website for **AIBA Sylhet National Half Marathon 2026**, organise
 
 ## Registration Fees
 
-| Category | Regular fee | Early Bird fee |
-|---|---:|---:|
-| Kids 1K | BDT 700 | BDT 600 |
-| Students 10K | BDT 1,000 | BDT 900 |
-| General 10K | BDT 1,200 | BDT 1,100 |
-| Half Marathon 21.1K | BDT 1,400 | BDT 1,300 |
-
-Early Bird participants receive **BDT 100 off** the applicable regular fee, subject to official terms and conditions.
+| Category | Registration Fee |
+|---|---:|
+| Kids 1K | BDT 700 |
+| Students 10K | BDT 1,000 |
+| General 10K | BDT 1,200 |
+| Half Marathon 21.1K | BDT 1,400 |
 
 ## Website Features
 
 - Responsive, mobile-first single-page event website
 - Poster-inspired dark forest green and lime visual identity
 - Light and Dark mode toggle with saved visitor preference
-- Race day and Early Bird countdown timers
+- Race day countdown timer
 - Run Bangladesh registration call-to-action area
 - Race categories and eligibility information
 - Prize structure and tiered prize distribution explanation
